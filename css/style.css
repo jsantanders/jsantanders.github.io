@@ -9,14 +9,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Merriweathe
 /*Posts titles*/
 h3 {
     -webkit-font-smoothing: subpixel-antialiased; 
-    margin-top:0px;
+    margin-top:5px;
     }
-h3 span{
-    margin-top:20px;
-    margin-botton:20px;
-    padding-left:10px; 
-    display:block;
-    }
+
 
 blockquote p { font-size: 16px; line-height: 1.6em; }
 

@@ -9,7 +9,7 @@
 
   <!--<h1 class="page-heading">Posts</h1>-->
 
-  <ul style="list-style: none; margin: 0 0 10px 0; padding: 0">
+  <ul style="list-style: none; margin: 0 0 20px 0; padding: 0">
     {% for post in site.posts %}
 			{% if post.tags.size > 0 %}
 					{% capture tags_content %}{% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}

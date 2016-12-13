@@ -22,14 +22,13 @@
 			{% else %}
 					{% assign tags_content = '' %}
 			{% endif %}
-      <li style="margin-bottom: 40px; margin-left:0">
+      <li>
         <span class="fa fa-calendar"> {{post.date | date: "%b %-d, %Y" }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h3>
 				<p id="post-meta">{{ tags_content }}</p>
 				{{ post.excerpt }}
-          
       </li>
     {% endfor %}
   </ul>

@@ -6,7 +6,6 @@
 
 
 <div>
-
   <!--<h1 class="page-heading">Posts</h1>-->
 
   <ul style="list-style: none; margin: 0 padding: 0">
@@ -23,7 +22,7 @@
 			{% else %}
 					{% assign tags_content = '' %}
 			{% endif %}
-      <li style="margin-bottom: 25px">
+      <li style="margin-bottom: 40px">
         <span class="fa fa-calendar"> {{post.date | date: "%b %-d, %Y" }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

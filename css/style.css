@@ -11,8 +11,6 @@ h3 {
     -webkit-font-smoothing: subpixel-antialiased; 
     margin-top:7px;
     }
-.post-list li:not(:last-child) {margin-bottom: 10px;}
-
 
 blockquote p { font-size: 16px; line-height: 1.6em; }
 

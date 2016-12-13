@@ -9,7 +9,7 @@
 
   <!--<h1 class="page-heading">Posts</h1>-->
 
-  <ul class="post-list" style="list-style: none; padding: 0; margin: 0">
+  <ul class="post-list" style="list-style: none; margin: 0">
     {% for post in site.posts %}
 			{% if post.tags.size > 0 %}
 					{% capture tags_content %}{% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
@@ -26,9 +26,9 @@
       <li>
         <span class="fa fa-calendar">{{% post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
+        <h3>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+        </h3>
 				<p id="post-meta">{{ tags_content }}</p>
 				{{ post.excerpt }}
       </li>

@@ -1,0 +1,75 @@
+bayesian: 
+    slug: bayesian 
+    name: Bayesian Statistics
+bioconductor:
+    slug: bioconductor
+    name: Bioconductor
+bioinfo:
+    slug: bioinfo
+    name: Bioinformatics
+cancer:
+    slug: cancer
+    name: Cancer
+cairo: 
+    slug: cairo
+    name: Cairo
+conda: 
+    slug: conda
+    name: Conda
+geoquery:
+    slug: geoquery
+    name: GEOquery
+git:
+    slug: git
+    name: git
+R:
+    slug: R
+    name: R
+xml2:
+    slug: xml2
+    name: xml2
+svgPanZoom:
+    slug: svgPanZoom
+    name: svgPanZoom
+stats:
+    slug: stats
+    name: Statistics
+TrAp:
+    slug: TrAp 
+    name: TrAp
+evolution:
+    slug: evolution
+    name: Evolution
+devtools:
+    slug: devtools
+    name: devtools
+kallisto:
+    slug: kallisto
+    name: kallisto
+picard: 
+    slug: picard
+    name: Picard
+mixmodels: 
+    slug: mixmodels
+    name: Mixture Models
+rmarkdown: 
+    slug: rmarkdown 
+    name: Rmarkdown
+mathjax: 
+    slug: mathjax
+    name: MathJax
+EM: 
+    slug: EM
+    name: Expectation-Maximization
+topicmodels: 
+    slug: topicmodels
+    name: topicmodels
+randvar: 
+    slug: randvar
+    name: Random Variables
+survival: 
+    slug: survival 
+    name: Survival Analysis
+v8: 
+    slug: v8
+    name: V8

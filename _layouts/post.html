@@ -3,27 +3,32 @@ layout: default
 notes: active
 ---
 
-<div class="notes">
-		<div class="note single">
-			<h1 class="title">{{ page.title }}</h1>
-			
-			<h2 class="date"><info datetime="{{ page.date }}">
-				{{ page.date | date_to_string }} {% if page.author %} by {{ page.author }} {% endif %}
-			</info></h2>
-			<!-- Post content -->
-			<div class="notebody">
-				{{ content }}
-			</div>
-			<!-- Post info -->
-			<div class="noteinfo">
-			<!-- include some categories and tags maybe? -->
-			</div>
+{% assign post = page %}
+{% if post.tags.size > 0 %}
+    {% capture tags_content %}{% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
+    {% for post_tag in post.tags %}
+      {% assign tag = site.data.tags[post_tag] %}
+      {% if tag %}
+        {% capture tags_content_temp %}{{ tags_content }}<a href="/tags/{{ tag.slug }}/">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+        {% assign tags_content = tags_content_temp %}
+      {% endif %}
+    {% endfor %}
+{% else %}
+    {% assign tags_content = '' %}
+{% endif %}
 
-			<hr>
+<div class="post">
 
-			<!-- Post comments -->
-			<div class="notecomments">
-				{% include disqus.html %}	 
-			</div>
-		</div><!-- / .note .single -->
-</div><!-- /.notes -->
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    <p id="post-meta">{{ tags_content }}</p>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+
+    {% include disqus.html %}
+  </article>
+
+</div>

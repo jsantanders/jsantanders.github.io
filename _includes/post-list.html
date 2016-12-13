@@ -22,7 +22,7 @@
 			{% else %}
 					{% assign tags_content = '' %}
 			{% endif %}
-      <li style="margin-bottom: 40px">
+      <li style="margin-bottom: 40px margin-left:0">
         <span class="fa fa-calendar"> {{post.date | date: "%b %-d, %Y" }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

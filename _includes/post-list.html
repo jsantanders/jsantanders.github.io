@@ -13,7 +13,7 @@
             {% assign category = site.my_categories | where: "slug", post.category %}
             {% assign category = category[0] %}
             {% if category %}
-                {% capture category_content %} <i class="fa fa-bookmark-o">:</i> <a class="fa fa-bookmark-o" href="{{ category.url }}"> {{ category.name }}</a>{% endcapture %}
+                {% capture category_content %} <i class="fa fa-bookmark-o">:</i> <a class="fa" href="{{ category.url }}"> {{ category.name }}</a>{% endcapture %}
             {% endif %}
         
     
@@ -23,7 +23,7 @@
                         {% assign tag = site.my_tags | where: "slug", post_tag %}
                         {% if tag %}
                             {% assign tag = tag[0] %}
-                            {% capture tags_content_temp %}{{ tags_content }}<a class="fa fa-tag" href="{{ tag.url }}">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+                            {% capture tags_content_temp %}{{ tags_content }}<a class="fa" href="{{ tag.url }}">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
                             {% assign tags_content = tags_content_temp %}
 						{% endif %}
 					{% endfor %}

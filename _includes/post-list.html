@@ -20,10 +20,11 @@
 			{% if post.tags.size > 0 %}
 					{% capture tags_content %}{% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
 					{% for post_tag in post.tags %}
-						{% assign tag = site.data.tags[post_tag] %}
-						{% if tag %}
-							{% capture tags_content_temp %}{{ tags_content }}<a href="/_my_tags/{{ tag.slug }}/">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
-							{% assign tags_content = tags_content_temp %}
+                        {% assign tag = site.my_tags | where: "slug", post_tag %}
+                        {% if tag %}
+                            {% assign tag = tag[0] %}
+                            {% capture tags_content_temp %}{{ tags_content }}<a href="{{ tag.url }}">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+                            {% assign tags_content = tags_content_temp %}
 						{% endif %}
 					{% endfor %}
 			{% else %}
@@ -35,7 +36,7 @@
             <h3>
                 <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h3>
-            <small>Posted{% if category_content %} in </small>{{ category_content }}<small>{% endif %} with {{ tags_content }}</small>
+            <p id="post-meta"><small>Posted{% if category_content %} in </small>{{ category_content }}<small>{% endif %} with {{ tags_content }}</small></p>
             <p><span style="font-size:14px">{{ post.excerpt }}</span></p>
         </li>
         {% endfor %}

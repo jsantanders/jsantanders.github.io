@@ -17,7 +17,7 @@
         {% endif %}
         
         {% if post.tags.size > 0 %}
-        {% capture tags_content %} with <span class="icon-price-tag{% if post.tags.size > 1 %}s{% endif %}"></span>: {% endcapture %}
+        {% capture tags_content %} with <span class="fa fa-bookmark">: {% if post.tags.size > 1 %}s{% endif %}</span> {% endcapture %}
         {% for post_tag in post.tags %}
         {% assign tag = site.my_tags | where: "slug", post_tag %}
         {% if tag %}

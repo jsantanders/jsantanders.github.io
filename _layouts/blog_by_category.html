@@ -1,14 +1,21 @@
 ---
 layout: default
 ---
-<h3>Post by category</h3>
+
+{% assign category = site.my_categories | where: "slug", post.category %}
+{% assign category = category[0] %}
+{% if category %}
+    {% capture category_content %}<span>: {{ category.name }}</span>{% endcapture %}
+{% endif %}
+
+<h3>Posts by category {{ category_content }}</h3> 
 
 <div class="text-justify">
   {% if site.categories[page.slug] %}
     {% for post in site.categories[page.slug] %}
       {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
       {% if forloop.first %}
-        <h3>{{ post_year }}</h3>
+        <h4>{{ post_year }}</h4>
         <div class="notelist">
       {% endif %}
       {% unless forloop.first %}
@@ -16,12 +23,12 @@ layout: default
         {% capture previous_post_year %}{{ site.categories[page.slug][previous_index].date | date: '%Y' }}{% endcapture %}
         {% if post_year != previous_post_year %}
           </div>
-          <h3>{{ post_year }}</h3>
+          <h4>{{ post_year }}</h4>
           <div class="notelist">
         {% endif %}
       {% endunless %}
       <a href="{{ post.url }}" class=" fafa-link">
-        <h4>{{ post.title }}</h4>
+        <h5>{{ post.title }}</h5>
       </a>
       {% if forloop.last %}
         </div>

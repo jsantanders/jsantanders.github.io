@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Discrete and continuous convolution, a dynamic view.
+title: Discrete and Continuous Convolution, a Dynamic View.
 tags: [R]
 categories: jekyll update
 ---

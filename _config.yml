@@ -16,3 +16,9 @@ highlighter: rouge
 
 # Google services
 google_analytics: UA-88962240-1
+
+#Colections
+collections:
+  my_categories:
+    output: true
+    permalink: /blog/category/:name/

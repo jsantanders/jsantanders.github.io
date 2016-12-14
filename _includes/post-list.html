@@ -8,30 +8,36 @@
 <div style="width: 90%; margin: 0 auto">
   <!--<h1 class="page-heading">Posts</h1>-->
 
-  <ul style="list-style: none; margin: 0; padding: 0">
-    {% for post in site.posts %}
-			{% if post.tags.size > 0 %}
-					{% capture tags_content %}{% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
-					{% for post_tag in post.tags %}
-						{% assign tag = site.data.tags[post_tag] %}
-						{% if tag %}
-							{% capture tags_content_temp %}{{ tags_content }}<a href="/tags/{{ tag.slug }}">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
-							{% assign tags_content = tags_content_temp %}
-						{% endif %}
-					{% endfor %}
-			{% else %}
-					{% assign tags_content = '' %}
-			{% endif %}
-      <li style="margin-bottom: 40px; margin-left:0">
-        <span class="fa fa-calendar"> {{post.date | date: "%b %-d, %Y" }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h3>
-				<p id="post-meta">{{ tags_content }}</p>
-				<span style="font-size:14px">{{ post.excerpt }}</span>
-      </li>
-    {% endfor %}
-  </ul>
+    <ul style="list-style: none; margin: 0; padding: 0">
+        {% for post in site.posts %}
+        {% assign category = site.my_categories | where: "slug", post.category %}
+        {% assign category = category[0] %}
+        {% if category %}
+        {% capture category_content %}<a class="fa fa-tag" href="{{ category.url }}">:{{ category.name }}</a>{% endcapture %}
+        {% endif %}
+        
+        {% if post.tags.size > 0 %}
+        {% capture tags_content %} with <span class="icon-price-tag{% if post.tags.size > 1 %}s{% endif %}"></span>: {% endcapture %}
+        {% for post_tag in post.tags %}
+        {% assign tag = site.my_tags | where: "slug", post_tag %}
+        {% if tag %}
+        {% assign tag = tag[0] %}
+        {% capture tags_content_temp %}{{ tags_content }}<a class="fa fa-bookmark" href="{{ tag.url }}">:{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+        {% assign tags_content = tags_content_temp %}
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        
+        <li style="margin-bottom: 40px; margin-left:0">
+            <span class="fa fa-calendar"> {{post.date | date: "%b %-d, %Y" }}</span>
+            <h3>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h3>
+            <small>Posted{% if category_content %} in </small>{{ category_content }}<small>{% endif %}{{ tags_content }}</small>
+            <span style="font-size:14px">{{ post.excerpt }}</span>
+        </li>
+        {% endfor %}
+    </ul>
 
   <!--<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>-->
 

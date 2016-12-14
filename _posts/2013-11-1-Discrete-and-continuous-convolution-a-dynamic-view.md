@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Discrete and Continuous Convolution, a Dynamic View.
-tags: [Matlab, DSP, Signal-Basics]
+tag: [Matlab, DSP, Signal-Basics]
 category: Signal-Processing
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using GitHub to Create and Host a Personal Website
-tags: [github, github-pages, jekyll]
+tag: [github, github-pages, jekyll]
 category: programming
 ---
 This is an overdue note about my switch to using GitHub and Jekyll for this website. After 10+ years using WordPress I finally made the switch to GitHub Pages (confession: I still use WordPress for certain projects at work). My switch largely centered around this rant that played itself out quite frequently in my head: 

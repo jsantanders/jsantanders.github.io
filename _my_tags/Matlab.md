@@ -1,4 +1,4 @@
 ---
-slug: matlab
+slug: Matlab
 name: Matlab
 ---

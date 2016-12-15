@@ -22,11 +22,17 @@ The convolution is a mathematical operator which takes two functions <span class
  <div class="main_block">
 
  <div class="inner_block">
-  <img src="/img/convpost/convrect.gif" alt="Convolution rect">
+    <img src="/img/convpost/convrect.gif" alt="Convolution rect">
  </div>
 
  <div class="inner_block">
-  <img src="/img/convpost/convgaus.gif" alt="Convolution gaus">
+    <img src="/img/convpost/convgaus.gif" alt="Convolution gaus">
  </div>
 
+</div>
+
+The animations above graphically illustrate the convolution of two boxcar functions (left) and two Gaussians (right). In the plots, the green curve shows the convolution of the blue and red curves as a function of <span class="inlinecode">$t$</span> the position indicated by the vertical green line. The gray region indicates the product <span class="inlinecode">$f(\tau)g(t-\tau)$</span> as function of <span class="inlinecode">$t$</span> so its area as a function of <span class="inlinecode">$t$</span> is precisely the convolution.
+
+<div class="main_block">
+    <img src="/img/convpost/conv.gif" alt="convolution">
 </div>

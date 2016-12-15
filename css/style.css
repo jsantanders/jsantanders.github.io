@@ -102,7 +102,7 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 
 /* figures */
 
-.main_block {width: 800px; border:2px;}
+.main_block {width: 650px; border:2px; margin: 0 auto;}
 .main_block:before,.main_block:after { overflow:hidden; content:""; display:table; }
 .main_block:after { clear:both; }
 .inner_block {

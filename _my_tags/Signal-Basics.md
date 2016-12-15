@@ -1,4 +1,4 @@
 ---
 slug: Basics-Signals
-name: Basics-Signals
+name: Basics Signals
 ---

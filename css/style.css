@@ -100,3 +100,14 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 	font-family: 'Montserrat', Helvetica, sans-serif; }
 
 
+/* figures */
+
+.main_block {width: 800px; border:2px;}
+.main_block:before,.main_block:after { overflow:hidden; content:""; display:table; }
+.main_block:after { clear:both; }
+.inner_block {
+ display: inline-block;
+ float:left;
+width:50%;
+}
+.inner_block img { width:100%; height:auto; vertical-align:middle; }

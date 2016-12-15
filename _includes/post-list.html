@@ -1,6 +1,5 @@
 
 <head>
-    
     <link rel="stylesheet" href="/rymnikski.github.io/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -36,7 +35,7 @@
             <h3>
                 <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h3>
-            <p id="post-meta"><small>Posted{% if category_content %} in </small>{{ category_content }}<small>{% endif %} with {{ tags_content }}</small></p>
+            <p id="post-meta"><small>Posted{% if category_content %} in {{ category_content }} {% endif %} with {{ tags_content }}</small></p>
             <p><span style="font-size:14px">{{ post.excerpt }}</span></p>
         </li>
         {% endfor %}

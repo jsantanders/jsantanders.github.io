@@ -4,7 +4,7 @@ title: Using GitHub to Create and Host a Personal Website
 tags: [github, github-pages, jekyll]
 category: programming
 ---
-This is an overdue note about my switch to using GitHub and Jekyll for this website. After 10+ years using WordPress I finally made the switch to GitHub Pages (confession: I still use WordPress for certain projects at work). My switch largely centered around this rant that played itself out quite frequently in my head: 
+This is an overdue note about my switch to using GitHub and Jekyll for this website. After 10+ years using WordPress I finally made the switch to GitHub Pages (confession: I still use WordPress for certain projects at work)<!--break-->. My switch largely centered around this rant that played itself out quite frequently in my head: 
 
 When you want something simple, having a WordPress site often comes with a lot of other things: a web hosting plan, updating plugins, monitoring auto-updates so your site's template and functionality don't break, a MySQL database, dealing with being a target for hackers, a lot of clicking around and fussing with settings, hacking Thesis, and on and on. <!-- flesh the previous sentence out with links --> For a personal website that features just few pages, a CV, and maybe a place to write blog posts and link to your social media accounts and departmental web pages – or just experiment around with the awesomeness of HTML5 <!-- flesh this out with links to codepen stuff or --> and the amazing things you can do with client side scripting <!-- ahem, more links -->, WordPress is bloated. 
 

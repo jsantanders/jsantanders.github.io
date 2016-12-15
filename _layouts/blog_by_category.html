@@ -2,39 +2,59 @@
 layout: default
 ---
 
+{% assign post = site.categories[page.slug][0] %}
 {% assign category = site.my_categories | where: "slug", post.category %}
 {% assign category = category[0] %}
-{% if category %}
-    {% capture category_content %}<span>: {{ category.name }}</span>{% endcapture %}
+{% capture category_content %} {{ category.name }} {% endcapture %}
+
+{% if post.tags.size > 0 %}
+        {% capture tags_content %}{% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
+        {% for post_tag in post.tags %}
+            {% assign tag = site.my_tags | where: "slug", post_tag %}
+            {% if tag %}
+                {% assign tag = tag[0] %}
+                {% capture tags_content_temp %}{{ tags_content }}<a class="fa" href="{{ tag.url }}">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+                {% assign tags_content = tags_content_temp %}
+            {% endif %}
+        {% endfor %}
+{% else %}
+        {% assign tags_content = '' %}
 {% endif %}
 
-<h3>Posts by category {{ category_content }}</h3> 
+<div style="width: 90%; margin: 0 auto">
+<h3>Posts by Category {{ category_content }}</h3> 
 
 <div class="text-justify">
   {% if site.categories[page.slug] %}
     {% for post in site.categories[page.slug] %}
       {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
       {% if forloop.first %}
-        <h4>{{ post_year }}</h4>
-        <div class="notelist">
+        <h4 class="fa fa-calendar">{{ post_year }}</h4>
+        <div class="list-group">
       {% endif %}
       {% unless forloop.first %}
         {% assign previous_index = forloop.index0 | minus: 1 %}
         {% capture previous_post_year %}{{ site.categories[page.slug][previous_index].date | date: '%Y' }}{% endcapture %}
         {% if post_year != previous_post_year %}
           </div>
-          <h4>{{ post_year }}</h4>
-          <div class="notelist">
+          <h4 class="fa fa-calendar">{{ post_year }}</h4>
+          <div class="list-group">
         {% endif %}
       {% endunless %}
-      <a href="{{ post.url }}" class=" fafa-link">
-        <h5>{{ post.title }}</h5>
+      <span class="list-group-item">
+      <a href="{{ post.url }}" >
+        <h4>{{ post.title }}</h4>
       </a>
+      <p><small>{{ post.content | split:'<!--break-->' | first }}...</small></p>
+      <p><small> {{ tags_content }}</small></p>
       {% if forloop.last %}
+      </span>
+      
         </div>
       {% endif %}
     {% endfor %}
   {% else %}
     <p>There are no posts in this category.</p>
   {% endif %}
+</div>
 </div>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Discrete and Continuous Convolution, a Dynamic View
+title: Discrete and Continuous Convolution, a Brief Animate Review
 tags: [Matlab, Basics-Signals]
 category: Signal-Processing
 ---
@@ -36,3 +36,15 @@ The animations above graphically illustrate the convolution of two boxcar functi
 <div class="main_block">
     <img src="/img/convpost/conv.gif" alt="convolution">
 </div>
+
+Code for do this animation is in my <a href="https://gist.github.com/rymnikski/454534def5f037ccc08b59a37d79a7b3">Github Gist</a> you can modify and play with it, works with Matlab and Octave, In case that you want view a continuos version, just change 'stem' by 'plot'.
+
+<h4><b>References</b></h4>
+
+<ul>
+<small>
+<li> <a href="http://mathworld.wolfram.com/about/author.html">Weisstein, Eric W</a>. "Convolution." From <a href="http://mathworld.wolfram.com/">MathWorld</a>--A <a href="http://mathworld.wolfram.com/Convolution.html">Wolfram Web Resource</a>.</li>
+
+<li> Convolution. (n.d.). In Wikipedia. Retrieved November 2013, From <a href="https://en.wikipedia.org/wiki/Convolution">Wikipedia Resource</a>.</li>
+</small>
+</ul>

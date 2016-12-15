@@ -22,11 +22,11 @@ The convolution is a mathematical operator which takes two functions <span class
  <div class="main_block">
 
  <div class="inner_block">
-  <img src=/rymnikski.github.io/img/convrect.gif>
+  <img src="/img/convpost/convrect.gif" alt="Convolution rect">
  </div>
 
  <div class="inner_block">
-  <img src=/rymnikski.github.io/img/convgaus.gif>
+  <img src="/img/convpost/convgaus.gif" alt="Convolution gaus">
  </div>
 
 </div>

@@ -17,7 +17,7 @@ The convolution is a mathematical operator which takes two functions <span class
  
  $$\tag{2} f*g=\sum^{\infty}_{m=-\infty} f[m]g[n-m] $$
  
- We can see the convolution just a fancy word for the operation per se, like a matrix product or even simple, like a polynomials division. But in this post we are interesting in understand how works this operation. And here we go:
+ We can see the convolution just a fancy word for the operation per se, like a matrix product or even simple, like a polynomials sum. But in this post we are interesting in understand how works this operation. And here we go:
  
  <div class="main_block">
 

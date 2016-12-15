@@ -10,16 +10,16 @@ Do I really need to make a database call to serve an About page with less than 5
 
 So I made a wishlist of the things I wanted for a personal website:
 
-* simplicity
-* good performance and reliability
-* no databases
-* hosting to be free or really cheap
-* a custom domain
-* the ability to work on my site from anywhere if needed
-* to use open source tools supported by an active development community
-* to get up and running quickly
-* to have version control on my website, preferably Git
-* to be able to share my code so others can easily re-use it
+* Simplicity.
+* Good performance and reliability.
+* No databases.
+* Hosting to be free or really cheap.
+* A custom domain.
+* The ability to work on my site from anywhere if needed.
+* To use open source tools supported by an active development community.
+* To get up and running quickly.
+* To have version control on my website, preferably Git.
+* To be able to share my code so others can easily re-use it.
 
 <a href="http://staticgen.com/">There are a lot of lightweight CMS options out there</a>, but I fell for the GitHub + Jekyll toolchain. It's well known and now pretty established, and the partnership it has developed with Jekyll developers (it's based in Ruby) and its use of Markdown to separate content from markup just seemed to click with me as a ocassional web developer. It may not be for everybody, but after an afternoon playing around with and getting over the learning curve, I think it can be for a lot more than developers.
 

@@ -12,7 +12,7 @@
             {% assign category = site.my_categories | where: "slug", post.category %}
             {% assign category = category[0] %}
             {% if category %}
-                {% capture category_content %} <i class="fa fa-bookmark-o">:</i> <a class="fa" href="{{ category.url }}"> {{ category.name }}</a>{% endcapture %}
+                {% capture category_content %} <i class="fa fa-bookmark">:</i> <a class="fa" href="{{ category.url }}"> {{ category.name }}</a>{% endcapture %}
             {% endif %}
         
     
@@ -35,7 +35,7 @@
             <h3>
                 <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h3>
-            <p id="post-meta"><small>Posted{% if category_content %} in {{ category_content }} {% endif %} with {{ tags_content }}</small></p>
+            <p id="post-meta" class="fa"><small>Posted{% if category_content %} in {{ category_content }} {% endif %} with {{ tags_content }}</small></p>
             <p><span style="font-size:14px">{{ post.excerpt }}</span></p>
         </li>
         {% endfor %}

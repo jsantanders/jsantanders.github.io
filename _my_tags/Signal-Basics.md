@@ -1,4 +1,4 @@
 ---
-slug: Signal-Basics
-name: Signal Basics
+slug: Basics-Signals
+name: Basics-Signals
 ---

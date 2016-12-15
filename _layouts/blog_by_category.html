@@ -3,10 +3,6 @@ layout: default
 ---
 
 {% assign post = site.categories[page.slug][0] %}
-{% assign category = site.my_categories | where: "slug", post.category %}
-{% assign category = category[0] %}
-{% capture category_content %} {{ category.name }} {% endcapture %}
-
 {% if post.tags.size > 0 %}
         {% capture tags_content %}{% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
         {% for post_tag in post.tags %}
@@ -22,14 +18,14 @@ layout: default
 {% endif %}
 
 <div style="width: 90%; margin: 0 auto">
-<h3>Posts by Category {{ category_content }}</h3> 
+<h3>Posts by Category {{ page.title }}</h3> 
 
 <div class="text-justify">
   {% if site.categories[page.slug] %}
     {% for post in site.categories[page.slug] %}
       {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
       {% if forloop.first %}
-        <h4 class="fa fa-calendar">{{ post_year }}</h4>
+        <h4 class="fa fa-calendar"> {{ post_year }}</h4>
         <div class="list-group">
       {% endif %}
       {% unless forloop.first %}
@@ -37,7 +33,7 @@ layout: default
         {% capture previous_post_year %}{{ site.categories[page.slug][previous_index].date | date: '%Y' }}{% endcapture %}
         {% if post_year != previous_post_year %}
           </div>
-          <h4 class="fa fa-calendar">{{ post_year }}</h4>
+          <h4 class="fa fa-calendar"> {{ post_year }}</h4>
           <div class="list-group">
         {% endif %}
       {% endunless %}

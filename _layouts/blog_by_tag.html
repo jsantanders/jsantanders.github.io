@@ -2,10 +2,9 @@
 layout: default
 ---
 
-
+<div style="width: 90%; margin: 0 auto">
 <h3>Post by Tag  {{page.title}}</h3>
 
-<div style="width: 90%; margin: 0 auto">
 <div class="text-justify">
   {% if site.tags[page.slug] %}
     {% for post in site.tags[page.slug] %}

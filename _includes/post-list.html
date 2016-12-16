@@ -31,7 +31,7 @@
                 {% endif %}
         
         <li style="margin-bottom: 40px; margin-left:0">
-            <span class="fa fa-calendar"><small> {{post.date | date: "%b %-d, %Y" }}</small></span>
+            <small><span class="fa fa-calendar"> {{post.date | date: "%b %-d, %Y" }}</span></small>
             <h3>
                 <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h3>

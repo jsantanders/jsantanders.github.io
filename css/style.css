@@ -1,21 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-body { padding-top: 20px; padding-bottom: 40px; font-family: Palatino Linotype, Book Antiqua, Palatino, 'Merriweather'; font-size: 16px; }
+body { padding-top: 20px; padding-bottom: 40px; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif, 'Merriweather' ; font-size: 18px; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Merriweather', Helvetica, sans-serif; font-weight: 500;}
 
 
-/*Posts titles*/
+/*Posts excerpt*/
 h3 {
     -webkit-font-smoothing: subpixel-antialiased; 
     margin-top:7px;
     }
 
+
 blockquote p { font-size: 16px; line-height: 1.6em; }
 
 /* Masthead */
-.header, .footer, .header h3 { font-family: 'Montserrat', Helvetica, sans-serif; text-transform: uppercase; font-weight: normal; }
+.header, .footer { font-family: 'Montserrat', Helvetica, sans-serif; text-transform: uppercase; font-weight: normal; font-size: 16px;}
+.header h3 { font-family: 'Montserrat', Helvetica, sans-serif; text-transform: uppercase; font-weight: normal;}
 
 /* Navigation */
 h3.text-muted a {text-decoration: none; color: #999999; }
@@ -71,7 +73,7 @@ ul.swatch li:first-child { webkit-border-top-left-radius: 9px; -webkit-border-bo
 iframe {font-family: 'Merriweather', Palatino Linotype, Book Antiqua; font-size: 16px;}
 
 /* About */
-.about ul.list-unstyled li { line-height: 30px; text-indent: -30px; margin-left: 30px;}
+.about ul.list-unstyled li { line-height: 30px; text-indent: 5px; margin-left: 30px;}
 
 /* Guides */
 .guide { width: 90%; margin: 0 auto 60px auto; line-height: 26px;}

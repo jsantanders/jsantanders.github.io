@@ -301,7 +301,7 @@ html {
 
 body {
   font-family: Palatino Linotype, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.428571429;
   color: #333333;
   background-color: #ffffff;
@@ -402,7 +402,7 @@ p {
 
 @media (min-width: 768px) {
   .lead {
-    font-size: 21px;
+    font-size: 26px;
   }
 }
 

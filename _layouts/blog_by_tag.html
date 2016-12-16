@@ -26,7 +26,7 @@ layout: default
       <a href="{{ post.url }}" >
         <h4>{{ post.title }}</h4>
       </a>
-      <p><small>{{ post.content | split:'<!--break-->' | first }}...</small></p>
+      <p>{{ post.content | split:'<!--break-->' | first }}...</p>
 {% assign category = site.my_categories | where: "slug", post.category %}
 {% assign category = category[0] %}
 {% capture category_content %} <i class="fa fa-bookmark">:</i> <a class="fa" href="{{ category.url }}"> {{ category.name }}</a>{% endcapture %}

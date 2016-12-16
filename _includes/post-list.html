@@ -36,7 +36,7 @@
                 <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h3>
             <p id="post-meta" class="fa"><small>Posted{% if category_content %} in {{ category_content }} {% endif %} with {{ tags_content }}</small></p>
-            <p><span style="font-size:14px">{{ post.excerpt }}</span></p>
+            <p>{{ post.excerpt }}</p>
         </li>
         {% endfor %}
     </ul>

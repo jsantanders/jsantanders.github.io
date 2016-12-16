@@ -41,7 +41,7 @@ layout: default
       <a href="{{ post.url }}" >
         <h4>{{ post.title }}</h4>
       </a>
-      <p><small>{{ post.content | split:'<!--break-->' | first }}...</small></p>
+      <p>{{ post.content | split:'<!--break-->' | first }}...</p>
       <p><small> {{ tags_content }}</small></p>
       {% if forloop.last %}
       </span>

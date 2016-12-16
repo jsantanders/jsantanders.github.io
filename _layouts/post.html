@@ -32,7 +32,7 @@ blog: active
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="fa fa-calendar"> {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    <p class="fa fa-calendar"><small> {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</small></p>
     <p id="post-meta"><small> <span class="fa fa-bookmark"> Category:</span> {% if category_content %}{{ category_content }}{% endif %} <span class="fa fa-tags"> Tags:</span> {{ tags_content }}</small></p>
   </header>
 

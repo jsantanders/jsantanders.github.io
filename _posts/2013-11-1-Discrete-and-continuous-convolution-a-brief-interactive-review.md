@@ -37,7 +37,7 @@ The animations above graphically illustrate the convolution of two boxcar functi
     <img src="/img/convpost/conv.gif" alt="convolution">
 </div>
 
-Code for do this animation is in my <a href="https://gist.github.com/rymnikski/454534def5f037ccc08b59a37d79a7b3">Github Gist</a> you can modify and play with it, works with Matlab and Octave, In case that you want view a continuos version, just change 'stem' by 'plot'.
+Code for do this animation is in my <a href="https://gist.github.com/rymnikski/454534def5f037ccc08b59a37d79a7b3">Github Gist</a> you can modify and play with it, works with Matlab and Octave, in case that you want view a continuos version, just change 'stem' by 'plot'.
 
 <h4><b>References</b></h4>
 

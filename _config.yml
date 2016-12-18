@@ -1,5 +1,5 @@
-permalink: /notes/:year/:month/:day/:title
-email: jesusg33@gmail.com
+permalink: /blog/:year/:month/:day/:title
+email: jesus@jsantander.me
 description: > # this means to ignore newlines until "baseurl:"
   My personal web page, and blog.
 baseurl: "" # the subpath of your site, e.g. /blog/

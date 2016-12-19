@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
-/*@import url(https://db.onlinewebfonts.com/c/d6ff8359042a1a1469122a9b2e76d057?family=AldusLTW01-Roman); AldusLTW01-Roman */
+@import url('https://fonts.googleapis.com/css?family=Tinos:400,700');
 
-body { padding-top: 20px; padding-bottom: 40px; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif, 'Merriweather' ; font-size: 18px; }
+body { padding-top: 20px; padding-bottom: 40px; font-family: 'Tinos', serif, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; font-size: 18px; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Merriweather', Helvetica, sans-serif; font-weight: 500;}
 
@@ -11,8 +11,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Merriweathe
 h3 {
     -webkit-font-smoothing: subpixel-antialiased; 
     margin-top:7px;
-    }
+}
 
+
+/*Header name*/
+.mainame {
+            font-family: 'Merriweather';
+            font-size: 20px;
+}
 
 blockquote p { font-size: 16px; line-height: 1.6em; }
 

@@ -43,8 +43,8 @@ Code for do this animation is in my <a href="https://gist.github.com/rymnikski/4
 
 <ul>
 <small>
-<li> <a href="http://mathworld.wolfram.com/about/author.html">Weisstein, Eric W</a>. "Convolution." From <a href="http://mathworld.wolfram.com/">MathWorld</a>--A <a href="http://mathworld.wolfram.com/Convolution.html">Wolfram Web Resource</a>.</li>
+<li> <a href="http://mathworld.wolfram.com/about/author.html"  target="_blank">Weisstein, Eric W</a>. "Convolution." From <a href="http://mathworld.wolfram.com/"  target="_blank">MathWorld</a>--A <a href="http://mathworld.wolfram.com/Convolution.html"  target="_blank">Wolfram Web Resource</a>.</li>
 
-<li> Convolution. (n.d.). In Wikipedia. Retrieved November 2013, From <a href="https://en.wikipedia.org/wiki/Convolution">Wikipedia Resource</a>.</li>
+<li> Convolution. (n.d.). In Wikipedia. Retrieved November 2013, From <a href="https://en.wikipedia.org/wiki/Convolution"  target="_blank">Wikipedia Resource</a>.</li>
 </small>
 </ul>

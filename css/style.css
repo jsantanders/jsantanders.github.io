@@ -18,6 +18,7 @@ h3 {
 .mainame {
             font-family: 'Merriweather';
             font-size: 20px;
+            font-weight: 200;
 }
 
 blockquote p { font-size: 16px; line-height: 1.6em; }

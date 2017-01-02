@@ -1,10 +1,11 @@
 language: ruby
 rvm:
-- 2.2.2
+- 2.2.5
 cache:
 - bundler
 gemfile: travisGemfile
 install:
+- gem install jekyll html-proofer
 - bundle install
 script:
 - bundle exec jekyll build && bundle exec htmlproof ./_site
@@ -14,3 +15,7 @@ branches:
   - source
 notifications:
   email: true
+sudo: false
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer

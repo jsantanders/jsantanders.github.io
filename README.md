@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/rymnikski/rymnikski.github.io.svg?branch=master)](https://travis-ci.org/rymnikski/rymnikski.github.io)
 # Hi there!
 Welcome to the innards of [my website](https://jsantander.me).
  

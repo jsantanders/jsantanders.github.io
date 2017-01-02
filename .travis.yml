@@ -9,7 +9,7 @@ install:
 - gem install html-proofer
 - bundle install
 script:
-- bundle exec jekyll build && bundle exec htmlproofer ./_site
+- bundle exec jekyll build && bundle exec htmlproofer ./_site --disable-external
 branches:
   only:
   - master

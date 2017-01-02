@@ -20,7 +20,7 @@ sass:
 title: Jesus Santander
 description: "My personal website and blog"
 keywords: "Radar, SAR, Commmunications, Data Analysis, SEO, blog, web"
-url: "https://jsantander.me"
+url:
 baseurl: ""
 # baseurl: ""
 

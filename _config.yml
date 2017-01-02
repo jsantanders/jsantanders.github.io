@@ -1,22 +1,62 @@
-permalink: /blog/:year/:month/:day/:title
-email: jesus@jsantander.me
-description: > # this means to ignore newlines until "baseurl:"
-  My personal web page, and blog.
-baseurl: "" # the subpath of your site, e.g. /blog/
-#url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: rymnikski
-github_username:  rymnikski
-
-markdown: kramdown
-
+# Build settings
+permalink   : /blog/:year/:title/
+markdown    : kramdown
 kramdown:
     input: GFM
+highlighter : pygments
+gems: [jekyll-paginate]
 
-highlighter: rouge
+paginate: 3
+paginate_path: "/blog/page/:num/"
+comments: true
+
+source: source
+destination: _site
+sass:
+  sass_dir: _scss
+  style: compressed # expanded
+
+# SEO settings
+title: Jesus Santander
+description: "My personal website and blog"
+keywords: "Radar, SAR, Commmunications, Data Analysis, SEO, blog, web"
+url: https://jsantander.me
+baseurl: ""
+# baseurl: ""
 
 # Google services
 google_analytics: UA-88962240-1
+# Disquis and repo
+repo: https://github.com/rymnikski/rymnikski.github.io
+disqus_shortname: "rymnikski"
+disqus_site_shortname: "rymnikski"
 
+# Author settings
+author:
+  name      : Jesus Santander
+  job       : Telecommunications Engineer
+  bio       : "Simplicity enthusiast, always looking for the best project and good coffee."
+  thumb     : /images/author.jpg
+  email     : jesus@jsantander.me
+  url       : https://jsantander.me
+  github    : https://github.com/rymnikski
+  twitter   : https://twitter.com/rymnikski
+  facebook  : https://facebook.com/rymnikski
+  linkedin  : https://linkedin.com/in/rymnikski
+  instagram : https://instagram.com/rymnikski
+  skype     : j.alberto03
+
+# navbar pages
+navbar:
+  - slug: blog
+    title: Blog
+  - slug: projects
+    title: Projects
+  - slug: resume
+    title: Resume
+  - slug: about
+    title: About
+    
 #Colections
 collections:
   my_categories:
@@ -26,21 +66,6 @@ collections:
   my_tags:
     output: true
     permalink: /blog/tag/:name/
-
-# Handling Reading
-exclude: [Gemfile, README.md]
-
-# Plugins
-gems:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# Outputting
-permalink: /post/:title/
-paginate: 5
-paginate_path: '/blog/page/:num/'
 
 defaults:
   -
@@ -66,3 +91,7 @@ defaults:
       path: "project"
     values:
       layout: project
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
+
+

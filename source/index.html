@@ -1,0 +1,21 @@
+---
+layout: home
+---
+
+<section class="hero">
+
+  <div class="hero-inner container">
+
+    <img src="{{ site.author.thumb | prepend: site.baseurl }}" alt="author thumb" class="dot">
+    <h1 class="myname">{{site.author.name}}</h1>
+    <h3 class="subtitle"><font color=  #35879A>{{ site.author.job }}</font> and <font color =  #35879A>Software Developer</font>.</h3>
+    <h3>Simplicity enthusiast, always looking for the best project and </br> good coffee.</h3>
+
+    <a href="{{ '/about' | prepend: site.baseurl }}" class="btn btn-ghost hvr-sweep-to-right">about</a>
+    <a href="{{ '/blog' | prepend: site.baseurl }}" class="btn btn-ghost hvr-sweep-to-right">blog</a>
+
+    {% include social.html %}
+
+  </div>
+
+</section>

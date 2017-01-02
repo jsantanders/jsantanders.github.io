@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+{% assign post = site.categories[page.slug][0] %}
+{% if post.tags.size > 0 %}
+        {% capture tags_content %}{% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
+        {% for post_tag in post.tags %}
+            {% assign tag = site.my_tags | where: "slug", post_tag %}
+            {% if tag %}
+                {% assign tag = tag[0] %}
+                {% capture tags_content_temp %}{{ tags_content }}<a class="fa" href="{{ tag.url }}">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+                {% assign tags_content = tags_content_temp %}
+            {% endif %}
+        {% endfor %}
+{% else %}
+        {% assign tags_content = '' %}
+{% endif %}
+
+<div>
+<div class="card">
+  {% if site.categories[page.slug] %}
+    {% for post in site.categories[page.slug] %}
+      {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
+      {% if forloop.first %}
+        <span class="post-meta"><h4 class="fa fa-calendar"> {{ post_year }}</h4></span>
+        <div>
+      {% endif %}
+      {% unless forloop.first %}
+        {% assign previous_index = forloop.index0 | minus: 1 %}
+        {% capture previous_post_year %}{{ site.categories[page.slug][previous_index].date | date: '%Y' }}{% endcapture %}
+        {% if post_year != previous_post_year %}
+          </div>
+          <h4 class="fa fa-calendar"> {{ post_year }}</h4>
+          <div>
+        {% endif %}
+      {% endunless %}
+      <span class="post-title">
+      <a href="{{ post.url }}" >
+        <h4>{{ post.title }}</h4>
+      </a>   
+     </span>
+      <p class="post-content">{{ post.content | split:'<!--break-->' | first }} <small><a class="post-meta" href="{{ post.url }}">[Continue reading]</a></small></p>
+      {% if forloop.last %}
+      
+      
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <p>There are no posts in this category.</p>
+  {% endif %}
+</div>
+</div>

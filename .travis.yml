@@ -3,10 +3,10 @@ rvm:
 - 2.2.2
 cache:
 - bundler
-gemfile: travisGemfile
+gemfile: Gemfile
 install:
 - bundle install
-script: 
+script:
 - bundle exec jekyll build && bundle exec htmlproof ./_site
 branches:
   only:

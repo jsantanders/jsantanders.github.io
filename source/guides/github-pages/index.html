@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: A Guide to Creating and Hosting a Personal Website on GitHub
 description: A beginner's guide to creating a personal website and blog using Jekyll and hosting it for free using GitHub Pages.
 ---
@@ -14,7 +14,7 @@ description: A beginner's guide to creating a personal website and blog using Je
 <p>For a little background on <em>why</em> I chose GitHub and GitHub Pages for my personal website (and other projects), see <a href="/notes/2014/05/03/using-github-to-create-and-host-a-personal-website">this note</a>.</p>
 
 <h2>Other Resources You Should Know</h2>
-  <p>In order to make GitHub Pages accessible to a wider audience, this guide focuses on using the web interface on github.com to build your personal website, thereby generalizing and glossing over the standard tools associated with Git and GitHub. To get a lot dirtier with Git and GitHub (ie, the command line and terminal), there are several other great guides you should also know about, probably bookmark, and read after completing this one, or jump over to if that is more your speed: <a href="http://24ways.org/2013/get-started-with-github-pages/" title="Get Started with GitHub Pages by Anna Debenham">Anna Debenham</a>, <a href="http://www.thinkful.com/learn/a-guide-to-using-github-pages/" title="A Guide To Using GitHub Pages by Thinkful">Thinkful</a>, and even <a href="https://pages.github.com/" title="GitHub Pages">GitHub</a> itself go above and beyond making the command line or local workflow of GitHub hosting and Jekyll templates accessible to a wider audience.</p>
+  <p>In order to make GitHub Pages accessible to a wider audience, this guide focuses on using the web interface on github.com to build your personal website, thereby generalizing and glossing over the standard tools associated with Git and GitHub. To get a lot dirtier with Git and GitHub (ie, the command line and terminal), there are several other great guides you should also know about, probably bookmark, and read after completing this one, or jump over to if that is more your speed: <a href="http://24ways.org/2013/get-started-with-github-pages/" title="Get Started with GitHub Pages by Anna Debenham">Anna Debenham</a>, <a href="https://www.thinkful.com/learn/a-guide-to-using-github-pages/" title="A Guide To Using GitHub Pages by Thinkful">Thinkful</a>, and even <a href="https://pages.github.com/" title="GitHub Pages">GitHub</a> itself go above and beyond making the command line or local workflow of GitHub hosting and Jekyll templates accessible to a wider audience.</p>
 
 <p>Also, at <a href="#resources">the end of this document</a>, there is a pretty good list of resources related to Git, GitHub/Pages, Jekyll, and Markdown that can help you dive deeper into these tools. I'll do my best to keep this list updated as I find new ones.</p> 
 
@@ -27,7 +27,7 @@ description: A beginner's guide to creating a personal website and blog using Je
 
 <p>In the diagram below, each stage represents a “save”. Without Git, you cannot go back to any of the in between stages from the initial draft and final draft. If you wanted to change the opening paragraph in the final draft, you’d have to delete data that you couldn’t recover. To work around this, we use the “save as” option, name it something different, delete the opening paragraph and start writing a new one.</p>
 
-<img class="img-responsive" src="/img/guides/git-basics.png"/>
+<img class="img-responsive" src="/images/guides/git-basics.png"/>
 
 <p>With Git, the flow is multidirectional. Each change that is significant is marked as important in a version, and you proceed. If you need to get back to earlier stages, you can without any loss of data. Presently, Google Docs “revision history” or Wikipedia’s “edit history” work in this sort of fashion. Git is just a lot more detailed and can get a lot more complex if needed.<sup><a href="#n1">1</a></sup></p>
 
@@ -46,7 +46,7 @@ description: A beginner's guide to creating a personal website and blog using Je
 
 <p>Usually, people just host the files that contain their code, so what you see on the end view is the actual code, as in this example from the Ruby on Rails project:</p>
 
-<img class="img-responsive" src="/img/guides/github-ruby-on-rails.png"/>
+<img class="img-responsive" src="/images/guides/github-ruby-on-rails.png"/>
 
 <h3>GitHub Pages</h3>
 <p>GitHub Pages are public webpages hosted for free through GitHub. GitHub users can create and host both personal websites (one allowed per user) and websites related to specific GitHub projects. Pages lets you do the same things as GitHub, but if the repository is named a certain way and files inside it are HTML or Markdown, you can view the file like any other website. GitHub Pages is the self-aware version of GitHub. Pages also comes with a powerful <a href="http://staticgen.com/">static site generator</a> called <a href="http://jekyllrb.com/">Jekyll</a>, which we'll learn more about later on.</p>
@@ -56,16 +56,16 @@ description: A beginner's guide to creating a personal website and blog using Je
 
 <p><span class="step">1</span>Create your project's repository. Login to your GitHub account and go to <a href="https://github.com/new">https://github.com/new</a> or click the New repository icon from your account homepage.</p>
 
-<img class="img-responsive" src="/img/guides/01-create-repo.png"/>
+<img class="img-responsive" src="/images/guides/01-create-repo.png"/>
 
 <p><span class="step">2</span> Name your repository <code>username.github.io</code>, replacing <code>username</code> with your GitHub username. Be sure it is public and go ahead and tell GitHub to create a <code>README</code> file upon generating the repo.</p>
 
-<img class="img-responsive" src="/img/guides/02-name-repo.png"/>
+<img class="img-responsive" src="/images/guides/02-name-repo.png"/>
 
 <p><span class="step">3</span> Create an <code>index.html</code> page by clicking the plus icon next to your repository name and typing the file name directly in the input box that appears.</p>
 
-<img class="img-responsive" src="/img/guides/03-01-create-index-page.png"/>
-<img class="img-responsive" src="/img/guides/03-02-create-index-page.png"/>
+<img class="img-responsive" src="/images/guides/03-01-create-index-page.png"/>
+<img class="img-responsive" src="/images/guides/03-02-create-index-page.png"/>
 
 <p>On the resulting page, put this markup inside of the GitHub text editor:</p>
 <pre class="prettyprint pre-scrollable"><code>&lt;!DOCTYPE html&gt;
@@ -99,13 +99,13 @@ description: A beginner's guide to creating a personal website and blog using Je
 
 <p><span class="step">4</span> Commit <code>index.html</code>. At the bottom of the page, there is a text input area to add a description of your changes and a button to commit the file.</p>
 
-<img class="img-responsive" src="/img/guides/04-01-commit-index-page.png"/>
+<img class="img-responsive" src="/images/guides/04-01-commit-index-page.png"/>
 
 <p>Congrats! You just built your first GitHub Pages site. View it at <a href="#">http://username.github.io</a>. Usually the first time your GitHub Pages site is created it takes 5-10 minutes to go live, so while we wait for that to happen, let's style your otherwise plain HTML site.</p>
 
 <p id="css"><span class="step">5</span> To style the content go back to your repository home and create a new file named <code>css/main.css</code>. The <code>css/</code> before the filename will automatically create a subdirectory called <code>css</code>. Pretty neat.</p>
 
-<img class="img-responsive" src="/img/guides/05-01-create-css-file.png"/>
+<img class="img-responsive" src="/images/guides/05-01-create-css-file.png"/>
 
 <p>Place the following inside <code>main.css</code>:</p>
 <pre class="prettyprint pre-scrollable">
@@ -156,11 +156,11 @@ ul.posts li &lbrace;
 
 <p>Don't forget to commit the new CSS file!</p>
 
-<img class="img-responsive" src="/img/guides/06-commit-css-file.png"/>
+<img class="img-responsive" src="/images/guides/06-commit-css-file.png"/>
 
 <p><span class="step">6</span> Link to your CSS file inside your HTML document's <code>&lt;head&gt;</code>. Go back to <code>index.html</code> and select the "Edit" button.</p>
 	
-<img class="img-responsive" src="/img/guides/07-01-edit-index-page.png"/>
+<img class="img-responsive" src="/images/guides/07-01-edit-index-page.png"/>
 	
 <p>Add a link to <code>main.css</code> (new markup is in bold):</p>
 
@@ -207,7 +207,7 @@ ul.posts li &lbrace;
  
 <p><span class="step">7</span> Create a <code>.gitignore</code> file. This file tells Git to ignore the <code>_site</code> directory that Jekyll automatically generates each time you commit. Because this directory and all the files inside are written each time you commit, you do not want this directory under version control.</p>
 
-<img class="img-responsive" src="/img/guides/08-01-create-gitignore.png"/>
+<img class="img-responsive" src="/images/guides/08-01-create-gitignore.png"/>
 
 <p>Add this simple line to the file:</p>
 <pre class="prettyprint pre-scrollable">

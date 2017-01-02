@@ -5,10 +5,11 @@ cache:
 - bundler
 gemfile: travisGemfile
 install:
-- gem install jekyll html-proofer
+- gem install jekyll
+- gem install html-proofer
 - bundle install
 script:
-- bundle exec jekyll build && bundle exec htmlproof ./_site
+- bundle exec jekyll build && bundle exec htmlproofer ./_site
 branches:
   only:
   - master

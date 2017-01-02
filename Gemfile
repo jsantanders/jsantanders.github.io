@@ -12,7 +12,4 @@ group :development do
   gem 'kramdown', group: [:jekyll_plugins]
   gem 'json', '~> 2'
   gem 'html-proofer'
-  gem 'github-pages'
-  gem 'liquid'
-  gem 'redcarpet'
 end

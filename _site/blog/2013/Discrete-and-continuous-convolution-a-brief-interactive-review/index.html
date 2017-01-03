@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Discrete and Continuous Convolution, a Brief Animate Review</title>
+    <meta name="description" content="The convolution is a mathematical operator which takes two functions ,  and converts them into a third   that represent the magnitude in which are overlapped...">
+    
+      <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="https://jsantander.me/blog/2013/Discrete-and-continuous-convolution-a-brief-interactive-review/">
+    <link rel="alternate" type="application/rss+xml" title="Jesus Santander" href="https://jsantander.me/feed.xml" />
+    <link href="/css/hover-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-88962240-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+		
+  </head>
+
+  <body>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-88962240-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+		
+    <main>
+      <header class="site-header">
+  <div class="container">
+    <h1><a href="/">Jesus<span> Santander</span></a></h1>
+
+    <button type="button" class="sliding-panel-button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="navbar sliding-panel-content">
+      <ul>
+        
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        
+          <li><a href="/projects" title="Projects">Projects</a></li>
+        
+          <li><a href="/resume" title="Resume">Resume</a></li>
+        
+          <li><a href="/about" title="About">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="sliding-panel-fade-screen"></div>
+
+
+      <div class="container">
+        <article role="article" class="post">
+
+  <div class="card">
+    <header class="post-header">
+      <h1 class="post-title-main">Discrete and Continuous Convolution, a Brief Animate Review</h1>
+                
+                
+                
+
+                
+      <small><p class="post-meta"><i class="fa fa-calendar"></i> Nov 1, 2013  |   <i class="fa fa-bookmark">:</i> <a class="post-meta" href="/blog/category/signal-processing/"> Signal Processing</a>  | <i class="fa fa-tags"></i>: <a class="post-meta" href="/blog/tag/matlab/">Matlab</a>, <a class="post-meta" href="/blog/tag/signal-basics/">Basics Signals</a> </p></small>
+    </header>
+
+    <div class="post-content">
+      <p>The convolution is a mathematical operator which takes two functions <span class="inlinecode"><script type="math/tex">f</script></span>, <span class="inlinecode"><script type="math/tex">g</script></span> and converts them into a third <span class="inlinecode"><script type="math/tex">f*g</script></span> <!--break--> that represent the magnitude in which are overlapped: <span class="inlinecode"><script type="math/tex">f</script></span> and an inverted version of <span class="inlinecode"><script type="math/tex">g</script></span>.</p>
+
+<p>I remember that the first time I heard this, I thought that the concept was a little abstract to understand. But it turns out that in reality it’s not complicated, it’s only necessary to see it in action to understand its meaning. So, why not create a program that makes the convolution between two signals step by step? First, let me introduce the math equations for discrete-time and continuos-time convolution.</p>
+
+<p>Continuos version is an integral:</p>
+
+<script type="math/tex; mode=display">\tag{1} f*g=\int^{\infty}_{-\infty} f(\tau)g(t - \tau)d\tau</script>
+
+<p>And discrete version is a summation:</p>
+
+<script type="math/tex; mode=display">\tag{2} f*g=\sum^{\infty}_{m=-\infty} f[m]g[n-m]</script>
+
+<p>We can see the convolution just a fancy word for the operation per se, like a matrix product or even simple, like a polynomials sum. But in this post we are interesting in understand how works this operation. And here we go:</p>
+
+<div class="main_block">
+
+ <div class="inner_block">
+    <img src="/images/convpost/convrect.gif" alt="Convolution rect" />
+ </div>
+
+ <div class="inner_block">
+    <img src="/images/convpost/convgaus.gif" alt="Convolution gaus" />
+ </div>
+
+</div>
+
+<p>The animations above graphically illustrate the convolution of two boxcar functions (left) and two Gaussians (right). In the plots, the green curve shows the convolution of the blue and red curves as a function of <span class="inlinecode"><script type="math/tex">t</script></span> the position indicated by the vertical green line. The gray region indicates the product <span class="inlinecode"><script type="math/tex">f(\tau)g(t-\tau)</script></span> as function of <span class="inlinecode"><script type="math/tex">t</script></span> so its area as a function of <span class="inlinecode"><script type="math/tex">t</script></span> is precisely the convolution.</p>
+
+<div class="main_block">
+    <img src="/images/convpost/conv.gif" alt="convolution" />
+</div>
+
+<p>Code for do this animation is in my <a href="https://gist.github.com/rymnikski/454534def5f037ccc08b59a37d79a7b3">Github Gist</a> you can modify and play with it, works with Matlab and Octave, in case that you want view a continuos version, just change ‘stem’ by ‘plot’.</p>
+
+<h4><b>References</b></h4>
+
+<ul class="special-list">
+<small>
+<li> <a href="http://mathworld.wolfram.com/about/author.html" target="_blank">Weisstein, Eric W</a>. "Convolution." From <a href="http://mathworld.wolfram.com/" target="_blank">MathWorld</a>--A <a href="http://mathworld.wolfram.com/Convolution.html" target="_blank">Wolfram Web Resource</a>.</li>
+
+<li> Convolution. (n.d.). In Wikipedia. Retrieved November 2013, From <a href="https://en.wikipedia.org/wiki/Convolution" target="_blank">Wikipedia Resource</a>.</li>
+</small>
+</ul>
+
+    </div>
+
+    
+<hr>
+
+<aside id="comments" class="disqus">
+  <div class="container">
+    <h3><i class="icon icon-comments-o"></i> Comments</h3>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function() {
+        this.page.url = 'https://jsantander.me';
+        this.page.identifier = '/blog/2013/Discrete-and-continuous-convolution-a-brief-interactive-review';
+      };
+      (function() {
+        var d = document,
+        s = d.createElement('script');
+        s.src = '//rymnikski.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</aside>
+
+  </div>
+
+</article>
+
+
+
+  
+  
+ 
+
+      </div>
+
+      <footer class="site-footer">
+  <div class="container">
+    <ul class="social">
+  <li><a href="https://github.com/rymnikski" target="_blank"><i class="fa fa-github"></i></a></li>
+  <li><a href="https://twitter.com/rymnikski" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://instagram.com/rymnikski" target="_blank"><i class="fa fa-instagram"></i></a></li>
+  <li><a href="https://www.linkedin.com/in/rymnikski" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+</ul>
+    <p class="txt-medium-gray site-footer-txt">
+      <small>&copy;2017 All rights reserved. Made with <i class="fa fa-heart"></i> by <a href="/">Jesus Santander</a> using <a href="https://jekyllrb.com/" target="_blank">Jekyll</a></small>
+    </p>
+  </div>
+    <!-- javascript at the end of the doc so page loads faster -->
+<!-- Javascript -->          
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  "HTML-CSS": {
+    availableFonts: ["Neo Euler"],
+    preferredFonts: "Neo Euler"
+  },
+  messageStyle: "none"
+});
+</script>
+<script type="text/javascript" src=/js/jquery-3.1.1.min.js></script>
+<script type="text/javascript" src=/js/jq_mathjax_parse.js></script>
+<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script> 
+
+
+</footer>
+
+
+
+      <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script>
+      $(document).ready(function() {
+        $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
+          $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
+          e.preventDefault();
+        });
+      });
+      </script>
+    </main>
+  </body>
+</html>

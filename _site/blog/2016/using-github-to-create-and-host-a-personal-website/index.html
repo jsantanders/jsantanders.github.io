@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Using GitHub to Create and Host a Personal Website</title>
+    <meta name="description" content="This is an opinion note about my switch to using GitHub and Jekyll for this website. My switch largely centered around this rant that played itself out quite...">
+    
+      <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="https://jsantander.me/blog/2016/using-github-to-create-and-host-a-personal-website/">
+    <link rel="alternate" type="application/rss+xml" title="Jesus Santander" href="https://jsantander.me/feed.xml" />
+    <link href="/css/hover-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-88962240-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+		
+  </head>
+
+  <body>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-88962240-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+		
+    <main>
+      <header class="site-header">
+  <div class="container">
+    <h1><a href="/">Jesus<span> Santander</span></a></h1>
+
+    <button type="button" class="sliding-panel-button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="navbar sliding-panel-content">
+      <ul>
+        
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        
+          <li><a href="/projects" title="Projects">Projects</a></li>
+        
+          <li><a href="/resume" title="Resume">Resume</a></li>
+        
+          <li><a href="/about" title="About">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="sliding-panel-fade-screen"></div>
+
+
+      <div class="container">
+        <article role="article" class="post">
+
+  <div class="card">
+    <header class="post-header">
+      <h1 class="post-title-main">Using GitHub to Create and Host a Personal Website</h1>
+                
+                
+                
+
+                
+      <small><p class="post-meta"><i class="fa fa-calendar"></i> Nov 10, 2016  |   <i class="fa fa-bookmark">:</i> <a class="post-meta" href="/blog/category/programming/"> Programming</a>  | <i class="fa fa-tags"></i>: <a class="post-meta" href="/blog/tag/github/">GitHub</a>, <a class="post-meta" href="/blog/tag/github-pages/">GitHub Pages</a>, <a class="post-meta" href="/blog/tag/jekyll/">Jekyll</a> </p></small>
+    </header>
+
+    <div class="post-content">
+      <p>This is an opinion note about my switch to using GitHub and Jekyll for this website. My switch largely centered around this rant that played itself out quite frequently in my head:<!--break-->  When you want something simple, having a WordPress site often comes with a lot of other things: a web hosting plan, updating plugins, monitoring auto-updates so your site’s template and functionality don’t break, a MySQL database, dealing with being a target for hackers, a lot of clicking around and fussing with settings, hacking Thesis, and on and on. <!-- flesh the previous sentence out with links --> For a personal website that features just few pages, a CV, and maybe a place to write blog posts and link to your social media accounts and departmental web pages – or just experiment around with the awesomeness of HTML5 <!-- flesh this out with links to codepen stuff or --> and the amazing things you can do with client side scripting <!-- ahem, more links -->, WordPress is bloated.</p>
+
+<p>Do I really need to make a database call to serve an About page with less than 500 words on it? No. Do I want a bunch of third-party scripts from whatever plugin author(s) just to have social sharing tools? No. Do I want to have to hack PHP in an existing WordPress template to adjust the banner for my logo or to just simplify the user experience? No. I still want to be able to get up and running in less than five minutes, but can’t it be a little lighter?</p>
+
+<p>So I made a wishlist of the things I wanted for a personal website:</p>
+<ul class="special-list">
+<li> Simplicity.</li>
+<li> Good performance and reliability.</li>
+<li> No databases.</li>
+<li> Hosting to be free or really cheap.</li>
+<li> A custom domain.</li>
+<li> The ability to work on my site from anywhere if needed.</li>
+<li> To use open source tools supported by an active development community.</li>
+<li> To get up and running quickly.</li>
+<li> To have version control on my website, preferably Git.</li>
+<li> To be able to share my code so others can easily re-use it.</li>
+</ul>
+<p></p>
+<p><a href="http://staticgen.com/" target="_blank">There are a lot of lightweight CMS options out there</a>, but I fell for the GitHub + Jekyll = <i class="fa fa-heart"></i> toolchain. It's well known and now pretty established, and the partnership it has developed with Jekyll developers (it's based in Ruby) and its use of Markdown to separate content from markup just seemed to click with me as a ocassional web developer. It may not be for everybody, but after an afternoon playing around with and getting over the learning curve, I think it can be for a lot more than developers.</p>
+
+<p>Jekyll has no database! Jekyll runs nothing on the server. It just keeps files ready to be served. Jekyll is really simple once you understand the basic structure and functions. It supports markdown for posts and pages. It uses the famous Liquid Syntax by shopify for conditional logic and other functionalities which actually human readable coding! I think this way of coding is very comprehensive even to a non-coder. So, if you are thinking about to switch, from my experience I advise to you do, never will back use another thing for your personal website.</p>
+
+    </div>
+
+    
+<hr>
+
+<aside id="comments" class="disqus">
+  <div class="container">
+    <h3><i class="icon icon-comments-o"></i> Comments</h3>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function() {
+        this.page.url = 'https://jsantander.me';
+        this.page.identifier = '/blog/2016/using-github-to-create-and-host-a-personal-website';
+      };
+      (function() {
+        var d = document,
+        s = d.createElement('script');
+        s.src = '//rymnikski.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</aside>
+
+  </div>
+
+</article>
+
+
+
+  
+  
+ 
+
+      </div>
+
+      <footer class="site-footer">
+  <div class="container">
+    <ul class="social">
+  <li><a href="https://github.com/rymnikski" target="_blank"><i class="fa fa-github"></i></a></li>
+  <li><a href="https://twitter.com/rymnikski" target="_blank"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="https://instagram.com/rymnikski" target="_blank"><i class="fa fa-instagram"></i></a></li>
+  <li><a href="https://www.linkedin.com/in/rymnikski" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+</ul>
+    <p class="txt-medium-gray site-footer-txt">
+      <small>&copy;2017 All rights reserved. Made with <i class="fa fa-heart"></i> by <a href="/">Jesus Santander</a> using <a href="https://jekyllrb.com/" target="_blank">Jekyll</a></small>
+    </p>
+  </div>
+    <!-- javascript at the end of the doc so page loads faster -->
+<!-- Javascript -->          
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  "HTML-CSS": {
+    availableFonts: ["Neo Euler"],
+    preferredFonts: "Neo Euler"
+  },
+  messageStyle: "none"
+});
+</script>
+<script type="text/javascript" src=/js/jquery-3.1.1.min.js></script>
+<script type="text/javascript" src=/js/jq_mathjax_parse.js></script>
+<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script> 
+
+
+</footer>
+
+
+
+      <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script>
+      $(document).ready(function() {
+        $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
+          $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
+          e.preventDefault();
+        });
+      });
+      </script>
+    </main>
+  </body>
+</html>

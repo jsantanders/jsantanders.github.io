@@ -114,10 +114,9 @@ body {
 
 .sliding-panel-button {
   float: right;
-  align-items: flex-end;
   @extend .btn;
-  padding: 1px;
-  margin: 0 $big-spacing 0 0;
+  padding: -5px;
+  margin: 0 0 0 0;
 
   span {
     width: 30px;

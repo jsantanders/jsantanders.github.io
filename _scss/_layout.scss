@@ -183,6 +183,11 @@ body {
     }
   }
 
+    @include media($mobile) {
+        post-content {
+            font-size: rem(14);
+        }
+    }
   @include media($mobile) {
     li, a {
       display: block;

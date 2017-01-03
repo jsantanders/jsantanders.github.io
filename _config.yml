@@ -4,7 +4,7 @@ markdown    : kramdown
 kramdown:
     input: GFM
 highlighter : rouge
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, github-pages, jekyll]
 
 paginate: 3
 paginate_path: "/blog/page/:num/"
@@ -13,7 +13,7 @@ comments: true
 destination: _site
 sass:
   sass_dir: _scss
-  style: compressed # expanded
+  style: expanded
 
 # SEO settings
 title: Jesus Santander
@@ -21,7 +21,6 @@ description: "My personal website and blog"
 keywords: "Radar, SAR, Commmunications, Data Analysis, SEO, blog, web"
 url: https://jsantander.me
 baseurl: ""
-# baseurl: ""
 
 # Google services
 google_analytics: UA-88962240-1

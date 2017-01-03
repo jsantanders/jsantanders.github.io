@@ -113,10 +113,10 @@ body {
 }
 
 .sliding-panel-button {
-  float: right;
+  float:  right;
   @extend .btn;
   padding: 5px;
-  margin: 0 $big-spacing 0 0;
+  margin: 0 0 0 0;
 
   span {
     width: 30px;
@@ -183,11 +183,6 @@ body {
     }
   }
 
-    @include media($mobile) {
-        post-content {
-            font-size: rem(14);
-        }
-    }
   @include media($mobile) {
     li, a {
       display: block;

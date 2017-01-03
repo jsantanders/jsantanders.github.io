@@ -114,8 +114,9 @@ body {
 
 .sliding-panel-button {
   float: right;
+  align-items: flex-end;
   @extend .btn;
-  padding: 5px;
+  padding: 1px;
   margin: 0 $big-spacing 0 0;
 
   span {
@@ -134,7 +135,6 @@ body {
 
 @include media($mobile) {
   $sliding-panel-width: 220px;
-  align-items: flex-end;
 
   .sliding-panel-content {
     border-top: 5px solid $primary-color;

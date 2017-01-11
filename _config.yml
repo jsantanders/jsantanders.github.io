@@ -3,7 +3,7 @@ permalink   : /blog/:year/:title/
 markdown    : kramdown
 kramdown:
     input: GFM
-highlighter : rouge
+highlighter : pygments
 gems: [jekyll-paginate]
 
 paginate: 3

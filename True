@@ -1,3 +1,7 @@
-htmlproofer 3.4.0 | Error:  Whoops, we can't understand your command.
-htmlproofer 3.4.0 | Error:  invalid option: --disable-external,
-htmlproofer 3.4.0 | Error:  Run your command again with the --help switch to see available options.
+Running ["LinkCheck", "ImageCheck", "ScriptCheck"] on ["./_site"] on *.html... 
+
+
+Ran on 26 files!
+
+
+htmlproofer 3.4.0 | Error:  HTML-Proofer found 2 failures!

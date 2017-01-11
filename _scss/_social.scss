@@ -1,0 +1,87 @@
+/* social */
+.twpluggin {
+    text-align: center;
+    font-family: $base-font-family;
+    font-size: rem(14);
+    background: #1DA1F2;
+    color: $white-color;
+    padding: 8px 10px;
+    border-radius: 2px;
+    margin: 0.8 * $base-spacing 0;
+
+    a {
+        font-weight: 900;
+        color: $white-color;
+        margin-left: 10px;
+        }
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white-color;
+    }
+}
+
+.fbpluggin {
+    text-align: center;
+    font-family: $base-font-family;
+    font-size: rem(14);
+    background: #3B5998;
+    color: $white-color;
+    padding: 8px 10px;
+    border-radius: 2px;
+    margin: 0.8 * $base-spacing 0;
+
+    a {
+        font-weight: 900;
+        color: $white-color;
+        margin-left: 10px;
+        }
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white-color;
+    }
+    
+}
+.gpluggin {
+    text-align: center;
+    font-family: $base-font-family;
+    font-size: rem(14);
+    background: #DB4437;
+    color: $white-color;
+    padding: 8px 10px;
+    border-radius: 2px;
+    margin: 0.8 * $base-spacing 0;
+
+    a {
+        font-weight: 900;
+        color: $white-color;
+        margin-left: 10px;
+        }
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white-color;
+    }
+}
+.toppluggin {
+    text-align: center;
+    font-family: $base-font-family;
+    font-size: rem(14);
+    background: $medium-gray-color;
+    color: $white-color;
+    padding: 8px 10px;
+    border-radius: 2px;
+    margin: 0.8 * $base-spacing 0;
+
+    a {
+        font-weight: 900;
+        color: $white-color;
+        margin-left: 10px;
+        }
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white-color;
+    }
+}

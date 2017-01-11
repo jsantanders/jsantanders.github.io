@@ -10,7 +10,6 @@ install:
 - bundle install
 script:
 - bundle exec jekyll build 
-- htmlproofer ./_site --disable-external, :allow_hash_href=>True 
 branches:
   only:
   - master

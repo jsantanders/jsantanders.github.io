@@ -3,6 +3,7 @@ $base-font-family: 'Fira Sans', sans-serif;
 $heading-font-family: $base-font-family;
 $serif-font-family: 'Tinos', serif;
 $condensed-font-family: 'Fira Sans Condensed', sans-serif;
+$extra-condensed-font-family: 'Fira Sans Extra Condensed', sans-serif;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -33,7 +34,7 @@ $medium-gray-color: #9a9a9a;
 $light-gray-color: #dedede;
 
 // Font Colors
-$base-font-color: lighten($dark-gray-color, 25%);
+$base-font-color: lighten($dark-gray-color, 15%);
 $action-color: $primary-color;
 
 // Border

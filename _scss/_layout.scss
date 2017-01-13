@@ -1,7 +1,7 @@
 /*=====================================
 =            Layout styles            =
 =====================================*/
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Fira+Sans:100,400,700|Merriweather|Tinos:400,700');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Fira+Sans+Extra+Condensed|Fira+Sans:100,300,400,700|Tinos');
 
 html,
 body {
@@ -25,7 +25,7 @@ body {
 }
 
 .myname {
-    font-family: 'Roboto';
+    font-family: $base-font-family;
     font-weight: 100;
 }
 
@@ -78,7 +78,7 @@ body {
     margin: 0;
     padding: 5px 0;
     float: left;
-    font-family: 'Roboto';
+    font-family: $base-font-family;
     font-weight: $font-weight-normal;
     font-size: rem(20);
 
@@ -92,7 +92,7 @@ body {
   }
 
   .navbar {
-    font-family: 'Roboto Condensed';
+    font-family: $condensed-font-family:;
     float: right;
   }
 
@@ -329,7 +329,7 @@ body.home {
 }
 
 .post-meta { 
-    font-family: $condensed-font-family;
+    font-family: $extra-condensed-font-family;
     font-weight: 400;
 
 }

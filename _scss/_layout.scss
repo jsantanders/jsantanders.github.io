@@ -1,7 +1,7 @@
 /*=====================================
 =            Layout styles            =
 =====================================*/
-@import url('https://fonts.googleapis.com/css?family=Merriweather|Roboto:100,400,700,900|Roboto+Condensed|Tinos:400,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Roboto:100,300,400,700,900|Roboto+Condensed|Tinos:400,700');
 
 html,
 body {
@@ -307,7 +307,7 @@ body.home {
 .post-list {
   .post {
     font-family: $serif-font-family;
-    font-size: rem(22);
+    font-size: rem(18);
     @extend .card;
 
     a {
@@ -324,7 +324,7 @@ body.home {
 
 .post-content {
     font-family: $serif-font-family;
-    font-size: rem(22);
+    font-size: rem(18);
     
 }
 

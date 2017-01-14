@@ -24,7 +24,7 @@
                 {% else %}
                         {% assign tags_content = '' %}
                 {% endif %}
-      <small><time><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }} </time>{% if category_content %} |  {{ category_content }} {% endif %} | {{ tags_content }}</small>
+      <small><time><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }} </time>{% if category_content %} <br/> {{ category_content }} {% endif %} | {{ tags_content }}</small>
     </div>
   </header>
 

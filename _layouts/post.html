@@ -26,7 +26,7 @@ layout: default
                 {% else %}
                         {% assign tags_content = '' %}
                 {% endif %}
-      <small><p class="post-meta"><i class="fa fa-calendar"></i> {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} {% if category_content %} |  {{ category_content }} {% endif %} | {{ tags_content }} </p></small>
+      <p class="post-meta"><i class="fa fa-calendar"></i> {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} {% if category_content %} <br/> {{ category_content }} {% endif %} | {{ tags_content }} </p>
     </header>
 
     <div class="post-content">
@@ -34,6 +34,7 @@ layout: default
     </div>
     <div>
         {% include share-social.html %}
+        {% include subscribe.html %}
     </div>
     
     {% include comments.html %}

@@ -127,6 +127,7 @@ GEM
     mini_portile2 (2.1.0)
     minima (2.0.0)
     minitest (5.10.1)
+    multi_json (1.12.1)
     multipart-post (2.0.0)
     net-dns (0.8.0)
     nokogiri (1.7.0)
@@ -136,6 +137,8 @@ GEM
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     public_suffix (2.0.5)
+    pygments.rb (1.1.1)
+      multi_json (>= 1.0.0)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
@@ -160,6 +163,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll
+  pygments.rb
 
 BUNDLED WITH
    1.13.6

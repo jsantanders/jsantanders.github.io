@@ -10,10 +10,10 @@ body {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
 }
-
 body {
   border-top: 5px solid $primary-color;
   background: $base-background-color url("../images/cubes.png");
+  overflow-x: hidden;
 }
 
 .container {
@@ -32,7 +32,6 @@ body {
 .subtitle {
     font-weight: 400;
 }
-
 
 .card {
   background-color: $white-color;

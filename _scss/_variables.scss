@@ -52,3 +52,8 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: .2s;
 $base-timing: ease;
+
+// Size
+$unit: 1rem;
+$offset: 6.4 * $unit;
+$offset-mobile: $offset / 2;

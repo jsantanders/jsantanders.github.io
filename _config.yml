@@ -1,4 +1,5 @@
 # Build settings
+port: 4040
 permalink   : /blog/:year/:title/
 markdown    : kramdown
 kramdown:

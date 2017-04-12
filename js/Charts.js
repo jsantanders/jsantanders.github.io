@@ -25,6 +25,7 @@ function drawTools() {
         pieHole: 0.4,
         chartArea : { left: "1%" },
         height: 240,
+        width: 350,
         titleTextStyle: { color: '#4B4650', fontName: 'Fira Sans', fontSize: '16' },
     };
     // Instantiate and draw the chart for framework.
@@ -50,6 +51,7 @@ function drawFrameworkChart() {
         pieHole: 0.4,
         chartArea : { left: "1%" },
         height: 240,
+        width: 350,
         titleTextStyle: { color: '#4B4650', fontName: 'Fira Sans', fontSize: '16' },
     };
 

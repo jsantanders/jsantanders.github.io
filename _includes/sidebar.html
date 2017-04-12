@@ -1,6 +1,6 @@
-<!-- Use icons from fontawesome when you are adding new item in the contact list  -->             
+<!-- Use icons from fontawesome when you are adding new item in the contact list  -->
 
-                 
+
      <div class="sidebar-wrapper post-meta">
             <div class="profile-container">
                 <img class="profile-img" src="/images/cv.jpg" alt="profile picture" />
@@ -9,19 +9,19 @@
             </div><!--//profile-container-->
             <div class="contact-container container-block">
                 <ul class="list-unstyled contact-list">
-                   
+
                    {% if site.author.email %}
                     <li><i class="fa fa-envelope"></i><a href="mailto: {{site.author.email}}">{{site.author.email}}</a></li>
                     {% endif %}
-                    
+
                     {% if site.url %}
                     <li><i class="fa fa-globe"></i><a href="{{site.url}}" target="_blank">www.jsantander.me</a></li>
                     {% endif %}
-                    
+
                     {% if site.author.github %}
                     <li><i class="fa fa-github"></i><a href="{{site.author.github}}" target="_blank">github.com/rymnikski</a></li>
                     {% endif %}
-                    
+
                     {% if site.author.twitter %}
                     <li><i class="fa fa-twitter"></i><a href="{{site.author.twitter}}" target="_blank">@rymnikski</a></li>
                     {% endif %}
@@ -34,7 +34,7 @@
                 <li>English <span class="lang-desc">(Professional)</span></li>
                 </ul>
                 </div><!--//interests-->
-         
+
                 <div class="container-block interests-list">
                 <h2 class="container-block-title">Interests</h2>
                 <ul class="list-unstyled interests-list">
@@ -43,7 +43,7 @@
                 <li>Web applications for embedded devices</li>
                 </ul>
                 </div><!--//interests-->
-         
+
                 <div class="container-block interests-list">
                 <h2 class="container-block-title">OS preferences</h2>
                 <ul class="list-unstyled interests-list">

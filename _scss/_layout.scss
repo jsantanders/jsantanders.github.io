@@ -246,6 +246,7 @@ body.home {
   padding: 5px;
   border: 1px solid $light-gray-color;
   padding-bottom: 2px !important;
+  height: 180px
 }
 
 h1 {
@@ -763,7 +764,7 @@ list-items {
 /* Large devices (large desktops, 1200px and up) */
 /* Ex-Large devices (large desktops, 1200px and up) */
 
-/* 
+/*
 used for profile image
 */
 .profile-img {
@@ -842,4 +843,11 @@ used for profile image
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+}
+
+.dot {
+  padding: 5px;
+  border: 1px solid $light-gray-color;
+  padding-bottom: 2px !important;
+  height: 150px
 }

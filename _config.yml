@@ -4,7 +4,8 @@ permalink   : /blog/:year/:title/
 markdown    : kramdown
 kramdown:
     input: GFM
-highlighter : pygments
+    auto_ids: true
+    syntax_highlighter: rouge
 gems: [jekyll-paginate]
 
 paginate: 3

@@ -2,7 +2,7 @@
 layout: post
 title: Introducción a ASP Core utilizando Visual Studio Code en GNU/Linux
 comments: true
-tags: [ASP, NET, Espaniol,]
+tags: [ASP, NET, Espaniol]
 category: Web-development
 ---
 

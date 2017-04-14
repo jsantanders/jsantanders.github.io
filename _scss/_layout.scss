@@ -251,7 +251,7 @@ body.home {
 .dot {
   padding: 5px;
   border: 1px solid $light-gray-color;
-  padding-bottom: 2px !important;
+  /*padding-bottom: 5px !important;*/
   height: 180px
 }
 
@@ -842,19 +842,9 @@ used for profile image
 .guide .notes h2 {
   font-size: 14px;
 }
-#particles-js{
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  background-image: url('');
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
 
 .dot {
   padding: 5px;
   border: 1px solid $light-gray-color;
-  padding-bottom: 2px !important;
   height: 150px
 }

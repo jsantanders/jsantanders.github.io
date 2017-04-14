@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introducción a ASP Core utilizando VS Code en Linux
+title: Introducción a ASP Core utilizando Visual Studio Code en GNU/Linux
 comments: true
 tags: [ASP, NET, Espaniol,]
 category: Web-development

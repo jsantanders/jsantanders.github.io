@@ -88,9 +88,7 @@ $ sudo pybombs -p myprefix rebuild gnuradio
 
 #### References
 
-<ul class="special-list">
-<small>
-<li> [1] <a href="http://gnuradio.org/">The GNU Radio Foundation, Inc website</a>.</li>
-<li> [2] <a href="https://github.com/gnuradio/pybombs">PyBombs GitHub repository, The GNU Radio Foundation</a>.</li>
-</small>
-</ul>
+
+[1] <a href="http://gnuradio.org/">The GNU Radio Foundation, Inc website</a>.
+
+[2] <a href="https://github.com/gnuradio/pybombs">PyBombs GitHub repository, The GNU Radio Foundation</a>.

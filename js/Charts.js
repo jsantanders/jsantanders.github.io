@@ -27,6 +27,9 @@ function drawTools() {
         height: 240,
         width: 350,
         titleTextStyle: { color: '#4B4650', fontName: 'Fira Sans', fontSize: '16' },
+        chartArea: {
+            width: '100%'
+        }
     };
     // Instantiate and draw the chart for framework.
     var chart = new google.visualization.PieChart(document.getElementById('tools'));
@@ -53,8 +56,11 @@ function drawFrameworkChart() {
         height: 240,
         width: 350,
         titleTextStyle: { color: '#4B4650', fontName: 'Fira Sans', fontSize: '16' },
+        chartArea: {
+            width: '100%'
+        }
     };
-
+    
     // Instantiate and draw the chart .
     var chart = new google.visualization.PieChart(document.getElementById('frameworks'));
     chart.draw(data, options);
@@ -83,6 +89,9 @@ function drawLenguages() {
         height: 240,
         width: 350,
         titleTextStyle: { color: '#4B4650', fontName: 'Fira Sans', fontSize: '16' },
+        chartArea: {
+            width: '100%'
+        }
     };
     // Instantiate and draw the chart for Lenguage.
     var chart = new google.visualization.PieChart(document.getElementById('languages'));

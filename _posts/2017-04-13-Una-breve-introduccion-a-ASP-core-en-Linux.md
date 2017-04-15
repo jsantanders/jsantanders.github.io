@@ -6,7 +6,7 @@ tags: [ASP, NET, Espaniol]
 category: Web-development
 ---
 
-Hace 2 años atrás ¿Quién hubiese imaginado que Microsoft iba a apostar tan fuerte por el Open Source liberando parte de su framework .NET? Esto surgió gracias al cambio de filosofía de la empresa y quienes hemos salido beneficiados en el proceso somos los desarrolladores, porque una de las cosas que se le exigía al de por sí completisimo **C#** era ser multiplataforma, que si bien la gente Mono ha hecho un excelente trabajo hacía falta ese soporte oficial. 
+Hace 2 años atrás ¿Quién hubiese imaginado que Microsoft iba a apostar tan fuerte por el Open Source liberando parte de su framework .NET? Esto surgió gracias al cambio de filosofía de la empresa y quienes hemos salido beneficiados en el proceso somos los desarrolladores, porque una de las cosas que se le exigía al de por sí completisimo **C#** era ser multiplataforma, que si bien la gente Mono ha hecho un excelente trabajo hacía falta ese soporte oficial. <!--break--> 
 
 Exploremos ahora como crear un proyecto en ASP Core utilizando el flameante editor Open Source **Visual Studio Code** (¿Tendremos pronto a Visual Studio en Linux?), lo primero que hay que tener en cuenta son las herramientas necesarias:
 

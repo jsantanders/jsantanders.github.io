@@ -10,19 +10,20 @@ This is an opinion note about my switch to using GitHub and Jekyll for this webs
 Do I really need to make a database call to serve an About page with less than 500 words on it? No. Do I want a bunch of third-party scripts from whatever plugin author(s) just to have social sharing tools? No. Do I want to have to hack PHP in an existing WordPress template to adjust the banner for my logo or to just simplify the user experience? No. I still want to be able to get up and running in less than five minutes, but can't it be a little lighter?
 
 So I made a wishlist of the things I wanted for a personal website:
-<ul class="special-list">
-<li> Simplicity.</li>
-<li> Good performance and reliability.</li>
-<li> No databases.</li>
-<li> Hosting to be free or really cheap.</li>
-<li> A custom domain.</li>
-<li> The ability to work on my site from anywhere if needed.</li>
-<li> To use open source tools supported by an active development community.</li>
-<li> To get up and running quickly.</li>
-<li> To have version control on my website, preferably Git.</li>
-<li> To be able to share my code so others can easily re-use it.</li>
-</ul>
-<p></p>
-<p><a href="http://staticgen.com/"  target="_blank">There are a lot of lightweight CMS options out there</a>, but I fell for the GitHub + Jekyll = <i class="fa fa-heart"></i> toolchain. It's well known and now pretty established, and the partnership it has developed with Jekyll developers (it's based in Ruby) and its use of Markdown to separate content from markup just seemed to click with me as web developer. It may not be for everybody, but after an afternoon playing around with and getting over the learning curve, I think it can be for a lot more than developers.</p>
 
-<p>Do not get me wrong, I like working with dynamic web applications, it's the funniest thing there is, but for my personal blog it's like killing flies to blows. And as Jekyll has no database (runs nothing on the server side). It just keeps files ready to be served. Jekyll is really simple once you understand the basic structure and functions. It supports markdown for posts and pages. It uses the famous Liquid Syntax by shopify for conditional logic and other functionalities which actually human readable coding! I think this way of coding is very comprehensive even to a non-coder. So, if you are thinking about to switch, from my experience I advise to you do, never will back use another thing for your personal website.</p>
+* Simplicity.
+* Good performance and reliability.
+* No databases.
+* Hosting to be free or really cheap.
+* A custom domain.
+* The ability to work on my site from anywhere if needed.
+* To use open source tools supported by an active development community.
+* To get up and running quickly.
+* To have version control on my website, preferably Git.
+* To be able to share my code so others can easily re-use it.
+
+<p></p>
+
+[There are a lot of lightweight CMS options out there](http://staticgen.com/), but I fell for the GitHub + Jekyll = <i class="fa fa-heart"></i> toolchain. It's well known and now pretty established, and the partnership it has developed with Jekyll developers (it's based in Ruby) and its use of Markdown to separate content from markup just seemed to click with me as web developer. It may not be for everybody, but after an afternoon playing around with and getting over the learning curve, I think it can be for a lot more than developers.
+
+Do not get me wrong, I like working with dynamic web applications, it's the funniest thing there is, but for my personal blog it's like killing flies to blows. And as Jekyll has no database (runs nothing on the server side). It just keeps files ready to be served. Jekyll is really simple once you understand the basic structure and functions. It supports markdown for posts and pages. It uses the famous Liquid Syntax by shopify for conditional logic and other functionalities which actually human readable coding! I think this way of coding is very comprehensive even to a non-coder. So, if you are thinking about to switch, from my experience I advise to you do, never will back use another thing for your personal website.

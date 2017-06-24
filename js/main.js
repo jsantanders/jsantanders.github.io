@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+$(document).ready(function($) {
 
     $('.level-bar-inner').css('width', '0');
     
@@ -13,6 +13,5 @@ jQuery(document).ready(function($) {
             }, 800);
             
         });
-
     });
 });

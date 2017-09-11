@@ -47,11 +47,10 @@ namespace Modelo
 
         public static bool Overlaps(IEnumerable<Promocion> listaDePromociones, Promocion promocionInsertar)
         {
-            //Convirtieno a "infinito" si no tiene rango máximo
             promocionInsertar.cantMaxima = promocionInsertar.sinCantidadMax ? 
             int.MaxValue : promocionInsertar.cantMaxima;
+            
             listaDePromociones.Where(d => d.sinCantidadMax).ToList().ForEach(s => s.cantMaxima = int.MaxValue);
-            //Comparación de los rango sobrepuestos
             bool isOverlaps = listaDePromociones.Where(d => d.identificador != promocionInsertar.identificador).Any(x =>
                          (x.cantMinima >= promocionInsertar.cantMinima && x.cantMinima <= promocionInsertar.cantMaxima)
                       || (x.cantMaxima >= promocionInsertar.cantMinima && x.cantMaxima <= promocionInsertar.cantMaxima)

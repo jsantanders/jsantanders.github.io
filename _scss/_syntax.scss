@@ -1,38 +1,38 @@
 .highlight {
-  @extend %clearfix;
-  padding: 0;
-  margin: {
-    top: 1.2em;
-    bottom: 1.2em;
-  };
+  // @extend %clearfix;
+  // padding: 0;
+  // margin: {
+  //   top: 1.2em;
+  //   bottom: 1.2em;
+  // };
 
-  &, .hll, pre, code {
-    border: none;
-  }
+  // &, .hll, pre, code {
+  //   border: none;
+  // }
 
-  pre {
-    margin: 0;
-    padding: 1.3em;
-    white-space: pre;
-    line-height: 23px;
-    overflow-x: auto;
-    margin-bottom: 0;
-    word-break: inherit;
-    word-wrap: inherit;
+  // pre {
+  //   margin: 0;
+  //   padding: 1.3em;
+  //   white-space: pre;
+  //   line-height: 23px;
+  //   overflow-x: auto;
+  //   margin-bottom: 0;
+  //   word-break: inherit;
+  //   word-wrap: inherit;
 
-    // &, code {
-    //   color: #eeffdd;
-    // }
+  //   // &, code {
+  //   //   color: #eeffdd;
+  //   // }
 
-    code {
-      white-space: pre;
-      padding: 0 !important;
+  //   code {
+  //     white-space: pre;
+  //     padding: 0 !important;
 
-      * {
-        white-space: nowrap; // this sets all children inside to nowrap
-      }
-    }
-  }
+  //     * {
+  //       white-space: nowrap; // this sets all children inside to nowrap
+  //     }
+  //   }
+  // }
 
 
    .hll { background-color: #ffffcc }

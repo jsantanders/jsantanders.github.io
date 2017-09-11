@@ -24,15 +24,15 @@
   //   //   color: #eeffdd;
   //   // }
 
-  //   code {
-  //     white-space: pre;
-  //     padding: 0 !important;
+    code {
+      white-space: pre;
+      padding: 0 !important;
 
       * {
         white-space: nowrap; // this sets all children inside to nowrap
       }
     }
-  // }
+  }
 
 
    .hll { background-color: #ffffff }

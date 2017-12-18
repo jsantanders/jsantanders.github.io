@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/rymnikski/rymnikski.github.io.svg?branch=master)](https://travis-ci.org/rymnikski/rymnikski.github.io)
 # Hi there!
-Welcome to the innards of [my website](https://jsantander.me).
+Welcome to the innards of [my website](https://rymnikski.github.io/).
  
 All content on this site is distributed under a [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US).
 

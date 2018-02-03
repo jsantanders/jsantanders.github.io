@@ -21,7 +21,7 @@ sass:
 title: Jesus Santander
 description: "My personal website and blog"
 keywords: "Radar, SAR, Commmunications, Data Analysis, SEO, blog, web"
-url: https://jsantander.me
+url: https://jsantander.com
 baseurl: ""
 # baseurl: ""
 
@@ -35,11 +35,11 @@ disqus_site_shortname: "rymnikski"
 # Author settings
 author:
   name      : Jesus Santander
-  job       : Telecommunications Engineer
+  job       : Web/Mobile developer 
   bio       : "Simplicity enthusiast, always looking for the best project and good coffee."
-  thumb     : /images/avatar.png
-  email     : jesus@jsantander.me
-  url       : https://jsantander.me
+  thumb     : /images/avatar.svg
+  email     : jesus@jsantander.com
+  url       : https://jsantander.com
   github    : https://github.com/rymnikski
   twitter   : https://twitter.com/rymnikski
   facebook  : https://facebook.com/rymnikski

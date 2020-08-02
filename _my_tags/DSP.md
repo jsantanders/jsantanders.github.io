@@ -1,4 +1,0 @@
----
-slug: DSP
-name: DSP
----

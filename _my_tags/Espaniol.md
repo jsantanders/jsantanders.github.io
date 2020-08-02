@@ -1,4 +1,0 @@
----
-slug: Espaniol
-name: Español
----

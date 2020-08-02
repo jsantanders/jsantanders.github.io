@@ -1,4 +1,0 @@
----
-slug: NET
-name: .NET
----

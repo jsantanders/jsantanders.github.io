@@ -1,0 +1,27 @@
+engines:
+  eslint:
+    enabled: true
+    channel: "eslint-3"
+    checks:
+      react/require-default-props:
+        enabled: false
+    config:
+      ignore_warnings: true
+      config: .eslintrc.js
+  stylelint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+        typescript:
+          mass_threshold: 75
+
+ratings:
+   paths:
+    - "**.ts"
+    - "**.tsx"
+    - "**.scss"
+
+exclude_paths:
+- src/assets/fonts/**/*

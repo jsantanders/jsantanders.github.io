@@ -1,0 +1,26 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.toggle-button{
+  position: absolute;
+  clear:both;
+  margin-left: auto;
+  max-width: 25px;
+  padding-top: 25px;
+  right: 10vw;
+  margin: 0;
+  z-index: 1;
+}
+
+@include breakpoint-sm{
+  .toggle-button{
+    right: 5vw;
+  }
+}
+
+@include breakpoint-md {
+  .toggle-button{
+    right: 10vw;
+    
+  }
+}

@@ -1,4 +1,0 @@
----
-slug: Matlab
-name: Matlab
----

@@ -1,7 +1,0 @@
-Running ["ScriptCheck", "LinkCheck", "ImageCheck"] on ["./_site"] on *.html... 
-
-
-Ran on 26 files!
-
-
-htmlproofer 3.4.0 | Error:  HTML-Proofer found 2 failures!

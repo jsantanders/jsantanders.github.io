@@ -1,0 +1,4 @@
+*.tsx linguist-language=TypeScript
+*.js text eol=lf
+public linguist-vendored
+src/assets/fonts linguist-vendored

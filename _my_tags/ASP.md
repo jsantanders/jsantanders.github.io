@@ -1,4 +1,0 @@
----
-slug: ASP
-name: ASP
----

@@ -1,6 +1,6 @@
 [![GitHub release](https://img.shields.io/github/release/jsantanders/jsantanders.github.io.svg)](https://github.com/jsantanders/jsantanders.github.io) [![Code Climate](https://img.shields.io/codeclimate/maintainability/jsantanders/jsantanders.github.io.svg)](https://codeclimate.com/github/jsantanders/jsantanders.github.io) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/jsantanders/jsantanders.github.io/master/LICENSE) [![Twitter](https://img.shields.io/twitter/url/https/github.com/jsantanders/jsantanders.github.io.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https://github.com/jsantanders/jsantanders.github.io)
 
-# Lumen
+# Credits
 
 Lumen is a minimal, lightweight and mobile-first starter for creating blogs uses
 [Gatsby](https://github.com/gatsbyjs/gatsby).
@@ -23,6 +23,7 @@ This is a fork of
 + Disqus Comments support.
 + Dark/Light theme support
 + TypeScript support.
++ Multi language post based on i18n.
 
 ## Folder Structure
 

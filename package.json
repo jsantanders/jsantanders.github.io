@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "jsantanders.github.io",
   "description": "Cloud and programming patterns",
   "main": "n/a",
@@ -7,7 +7,7 @@
     "clean:public": "rm -rf public",
     "clean": "npm run clean:public",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write './*.js' 'src/**/*.js' 'src/**/*.jsx'",
+    "format": "prettier --write './*.js' 'src/**/*.ts' 'src/**/*.tsx'",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "start": "gatsby develop",
     "develop": "gatsby develop",

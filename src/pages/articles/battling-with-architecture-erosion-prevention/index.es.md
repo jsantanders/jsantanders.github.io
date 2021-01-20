@@ -3,11 +3,10 @@ title: "Batallando contra la erosión de arquitectura I: Prevención"
 date: '2021-01-02'
 spoiler: A brief conversation about the importance of software architecture in modern applications.
 layout: post
-draft: true
+draft: false
 category: "Software Sustainability"
 tags:
   - "Software Architecture"
-  - ""
 description: "A brief conversation about the importance of software architecture in modern applications"
 ---
 

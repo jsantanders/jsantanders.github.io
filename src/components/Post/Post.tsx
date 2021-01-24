@@ -49,7 +49,7 @@ const Post : React.FC<Props> = (props) => {
             className="post__meta-time"
             dateTime={moment(date).format('MMMM D, YYYY')}
           >
-            {moment(date).format('MMMM YYYY')}
+            {moment(date).format('D MMMM YYYY')}
           </time>
           <span className="post__meta-divider" />
           <span className="post__meta-time">

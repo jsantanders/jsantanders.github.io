@@ -153,7 +153,7 @@ const PostTemplateDetails : React.FC<Props> = (props) => {
           <div className="post-single__inner">
             <h1 className="post-single__title">{post.frontmatter.title}</h1>
             <div className="post-single__subtitle">
-              {moment(post.frontmatter.date).format('DD MMM YYYY')} • {`${formatReadingTime(timeToRead)}`}
+              {moment(post.frontmatter.date).format('D MMM YYYY')} • {`${formatReadingTime(timeToRead)}`}
             </div>
             <div className="post-single__body">
               {translationBlock}

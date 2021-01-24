@@ -18,14 +18,14 @@ algunas pueden ser determinantes a la hora de decantarse por otra solución. A c
 considero son las que más pueden hacerte reconsiderar B2C:
 
 - A la fecha de hoy no es posible utilizar dominios personalizados, y tus clientes tienen que seguir el flujo
-de autenticación a través de **subdominio**.b2clogin.com. Lo cual me parece que genera desconfianza,
-puesto que muchos usuarios han aprendido a evitar el phishing fijándose en la URL de la aplicación.
+  de autenticación a través de **subdominio**.b2clogin.com. Lo cual me parece que genera desconfianza,
+  puesto que muchos usuarios han aprendido a evitar el phishing fijándose en la URL de la aplicación.
 - Los flujos de autenticación preconstruidos no son óptimos para integrarse con aplicaciones reales, a mi parecer
-solo sirven para pruebas de concepto y primer contacto con el producto. Pero una vez que empiezas a hacer uso intensivo
-dentro de tu aplicación es necesario pasar por los flujos personalizados, lo cual requiere de mucha más experticia por
-parte del equipo de desarrolladores.
+  solo sirven para pruebas de concepto y primer contacto con el producto. Pero una vez que empiezas a hacer uso intensivo
+  dentro de tu aplicación es necesario pasar por los flujos personalizados, lo cual requiere de mucha más experticia por
+  parte del equipo de desarrolladores.
 - La documentación es muy dispersa y en algunos casos incompleta, en comparación, proveedores como Auth0 tienen ejemplos
-en GitHub para todos los frameworks y cuentan con documentación muy detallada.
+  en GitHub para todos los frameworks y cuentan con documentación muy detallada.
 
 Si lo anterior no te desanima, o estás dispuesto a esperar a que el equipo de Microsoft encargado de AD B2C resuelva estos
 desperfectos (el primer punto tiene desde el 2017), entonces tienes frente de ti un proveedor de identidad con un precio muy competitivo (primeros 50000 usuarios gratuitos) y que si el resto de la infraestructura de tu aplicación está en Azure resulta práctico.
@@ -74,7 +74,7 @@ Estos `ClaimTypes` puedes agregarlos en el archivo `TrustFrameworkExtensions.xml
       <OutputClaim ClaimTypeReferenceId="userMessage" TransformationClaimType="outputClaim" />
     </OutputClaims>
   </ClaimsTransformation>
-</ClaimsTransformations>   
+</ClaimsTransformations>
 ```
 
 Con esto listo, es momento de crear el `TechnicalProfile` que validará que el correo no esté ya registrado.
@@ -119,7 +119,7 @@ Y ahora solo nos resta incluirlo en el `UserJourneys` como un `OrchestrationStep
     <Precondition Type="ClaimsExist" ExecuteActionsIf="true">
       <Value>objectId</Value>
       <Action>SkipThisOrchestrationStep</Action>
-    </Precondition>          
+    </Precondition>
     <Precondition Type="ClaimsExist" ExecuteActionsIf="false">
       <Value>tempObjectId</Value>
       <Action>SkipThisOrchestrationStep</Action>

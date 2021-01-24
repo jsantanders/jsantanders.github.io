@@ -108,7 +108,7 @@ And now we only have to include it in the `UserJourneys` as an `OrchestrationSte
     <Precondition Type="ClaimsExist" ExecuteActionsIf="true">
       <Value>objectId</Value>
       <Action>SkipThisOrchestrationStep</Action>
-    </Precondition>          
+    </Precondition>
     <Precondition Type="ClaimsExist" ExecuteActionsIf="false">
       <Value>tempObjectId</Value>
       <Action>SkipThisOrchestrationStep</Action>

@@ -3,7 +3,7 @@ title: Unicidad de correo electrónico en Azure AD B2C
 date: '2020-08-02'
 spoiler: un único correo electrónico para gobernarlos a todos.
 layout: post
-draft: false
+draft: true
 category: "Azure"
 tags:
   - "AD B2C"

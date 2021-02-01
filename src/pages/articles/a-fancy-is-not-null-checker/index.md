@@ -15,7 +15,7 @@ The classic way of check if an reference is not null is the following:
 if (thing != null)
 ```
 
-But, what happens if someone overload the `!=` operator? We cannot guarantee that is an object. But, using the following pattern it wouldn't matter:
+But, what happens if someone overload the `!=` operator? We cannot guarantee that is an object. But, using the following pattern, that wouldn't matter:
 
 ```csharp
 if (thing is object)
@@ -27,4 +27,4 @@ Also, we can use it to check if a reference is null:
 if (thing is null)
 ```
 
-There are developers who can argue that in this way (first case) the intention of checking if the variable has a non-null instance is being obfuscated. But I think it's idiomatic enough once you get used to it and get used to your colleagues using it. What do you think?
+There are developers who can argue that in this way (first case) the intention of checking if the variable has a non-null instance is being obfuscated. But I think it's more idiomatic, at least once you get used to it. What do you think?

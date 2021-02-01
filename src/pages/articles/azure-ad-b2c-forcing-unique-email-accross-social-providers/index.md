@@ -11,9 +11,9 @@ tags:
 description: "An important feature that isn't implemented in Azure AD B2C is ensuring email uniqueness across all identity providers (Google, Microsoft, Facebook). This article explores a method to ensure this."
 ---
 
-Azure AD B2C has the potential to be a great product, but it still has a lot to improve, some [drawbacks](https://www.azurefromthetrenches.com/azure-ad-b2c-a-painful-journey-goodbye-for-now/) and you could ending choosing another solution. Below, I list the ones that II think are the ones that can make you reconsider using B2C:
+Azure AD B2C has the potential to be a great product, but it still has a lot to improve, it has some [drawbacks](https://www.azurefromthetrenches.com/azure-ad-b2c-a-painful-journey-goodbye-for-now/). Below, I list the ones that I think are the most critital and can make you reconsider using B2C:
 
-- Until today it is not possible to use [custom domains](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/15334317-customer-owned-domains), and final users have to follow the authentication flow through **subdomain**. B2clogin.com. This seems to me to generate mistrust since many users have learned to avoid phishing by looking at the application's URL.
+- Until today it's not possible to use [custom domains](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/15334317-customer-owned-domains), and final users have to follow the authentication flow through **subdomain**.B2clogin.com. This could generate mistrust since many users have learned to avoid phishing by looking at the application's URL.
 - The pre-built authentication flows are not optimal to integrate with real applications, in my opinion, they only serve as proofs of concept and first contact with the product. But once you start to make intensive use of your application it's necessary to go through the custom flows, which requires much more expertise.
 - The documentation is very sparse and in some cases incomplete, in comparison, providers like Auth0 have examples on GitHub for all frameworks and have very detailed documentation.
 

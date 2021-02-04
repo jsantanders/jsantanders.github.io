@@ -3,36 +3,10 @@ import { Helmet } from 'react-helmet'
 import { graphql, PageProps } from 'gatsby'
 import Layout from '../components/Layout'
 import PageTemplateDetails from '../components/PageTemplateDetails'
-
-interface PageQueryData {
-  site: {
-    siteMetadata: {
-      disqusShortname: string,
-      url: string,
-      title: string,
-      subtitle: string,
-      author: {
-        name: string,
-        twitter: string,
-        github: string,
-        stackoverflow: string,
-      },
-      menu: Array<{label: string, path: string}>,
-      copyright: string
-    }
-  },
-  markdownRemark: {
-      frontmatter: {
-        date: string
-        title: string,
-        description: string
-      },
-      html: string
-  }
-}
+import { PageQuery } from 'types'
 
 interface Props extends PageProps {
-  readonly data: PageQueryData
+  readonly data: PageQuery
 }
 
 const PageTemplate : React.FC<Props> = (props) => {

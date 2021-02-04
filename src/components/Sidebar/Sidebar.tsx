@@ -5,27 +5,11 @@ import Menu from '../Menu'
 import Links from '../Links'
 import profilePic from '../../pages/photo.jpg'
 import './style.scss'
+import { PageQuery } from 'types'
 
-interface PageQueryData {
-  site: {
-    siteMetadata: {
-      disqusShortname: string,
-      url: string,
-      subtitle: string,
-      author: {
-        name: string,
-        twitter: string,
-        github: string,
-        stackoverflow: string,
-      },
-      menu: Array<{label: string, path: string}>,
-      copyright: string
-    }
-  }
-}
 
 interface Props extends PageProps {
-  readonly data: PageQueryData
+  readonly data: PageQuery
 }
 
 

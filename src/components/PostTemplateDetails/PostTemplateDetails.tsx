@@ -8,48 +8,11 @@ import Translations from '../Translations'
 import ScrollButton from "../ScrollButton"
 import { formatReadingTime } from '../../utils/helpers'
 import ColorModeToggle from '../ThemeToggle'
-
-interface PageQueryData {
-  site: {
-    siteMetadata: {
-      disqusShortname: string,
-      url: string,
-      subtitle: string,
-      author: {
-        name: string,
-        twitter: string,
-        github: string,
-        stackoverflow: string,
-      },
-    }
-  },
-  markdownRemark: {
-    fields: {
-      slug: string,
-      tagSlugs: Array<string>,
-      categorySlug: string,
-      langKey: string
-    }
-    timeToRead: number,
-    frontmatter: {
-        date: string
-        title: string,
-        category_id: string,
-        tags: Array<string>
-      },
-    html: string
-  }
-}
+import { PageContext, PageQuery } from 'types'
 
 interface Props {
-  readonly data: PageQueryData,
-  readonly pageContext :{
-    previous: string,
-    next: string,
-    slug: string,
-    translations: Array<string>,
-    translatedLinks: Array<string>,
-  }
+  readonly data: PageQuery,
+  readonly pageContext : PageContext
 }
 
 const PostTemplateDetails : React.FC<Props> = (props) => {
@@ -59,8 +22,8 @@ const PostTemplateDetails : React.FC<Props> = (props) => {
     const lang = post.fields.langKey
     const timeToRead = post.timeToRead
     let {
-      previous,
-      next,
+      prevPagePath,
+      nextPagePath,
       slug,
       translations,
       translatedLinks,
@@ -98,7 +61,7 @@ const PostTemplateDetails : React.FC<Props> = (props) => {
       enSlug.length - 1
     )}/index${lang === 'en' ? '' : '.' + lang}.md`;
     const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
-      `https://overreacted.io${enSlug}`
+      `https://jsantanders.dev${enSlug}`
     )}`;
 
     const homeBlock = (

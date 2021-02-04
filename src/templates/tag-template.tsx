@@ -4,50 +4,11 @@ import { graphql, PageProps } from 'gatsby'
 import Layout from '../components/Layout'
 import Sidebar from '../components/Sidebar'
 import TagTemplateDetails from '../components/TagTemplateDetails'
-
-interface PageQueryData {
-  site: {
-    siteMetadata: {
-      disqusShortname: string,
-      url: string,
-      title: string,
-      subtitle: string,
-      author: {
-        name: string,
-        twitter: string,
-        github: string,
-        stackoverflow: string,
-      },
-      menu: Array<{label: string, path: string}>,
-      copyright: string
-    }
-  }
-  allMarkdownRemark: {
-    totalCount: number
-    edges: {
-      node: {
-        excerpt: string
-        fields: {
-          slug: string,
-          categorySlug: string
-        }
-        timeToRead: number
-        frontmatter: {
-          date: string
-          title: string,
-          category: string,
-          description: string
-        }
-      }
-    }[]
-  }
-}
+import { PageContext, PageQuery } from 'types'
 
 interface Props extends PageProps {
-  readonly data: PageQueryData
-  readonly pageContext: {
-    tag?: string
-  }
+  readonly data: PageQuery
+  readonly pageContext: PageContext
 }
 
 const TagTemplate : React.FC<Props> = (props) => {

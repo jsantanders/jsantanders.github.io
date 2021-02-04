@@ -1,21 +1,10 @@
 import React, { useState  } from 'react'
 import ReactDisqusComments from 'react-disqus-comments'
+import { SiteMetadata, Node } from 'types';
 
 interface Props {
-  readonly siteMetadata: {
-    disqusShortname: string,
-    url: string
-  },
-  readonly postNode: {
-    fields: {
-      slug: string
-    }
-    frontmatter: {
-      date: string
-      title: string,
-      category_id: string
-    }
-  }
+  readonly siteMetadata: SiteMetadata
+  readonly postNode: Node
 }
 
 const Disqus : React.FC<Props> = (props) =>  {
@@ -36,7 +25,7 @@ const Disqus : React.FC<Props> = (props) =>  {
     if (!siteMetadata.disqusShortname) {
       return null
     }
-    const post = postNode.frontmatter
+    const post = postNode
     const url = siteMetadata.url + postNode.fields.slug
     return (
       <ReactDisqusComments

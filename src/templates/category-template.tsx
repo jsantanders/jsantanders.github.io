@@ -4,54 +4,14 @@ import { graphql, PageProps } from 'gatsby'
 import Layout from '../components/Layout'
 import Sidebar from '../components/Sidebar'
 import CategoryTemplateDetails from '../components/CategoryTemplateDetails'
-
-interface PageQueryData {
-  site: {
-    siteMetadata: {
-      title: string,
-      disqusShortname: string,
-      url: string,
-      subtitle: string,
-      author: {
-        name: string,
-        twitter: string,
-        github: string,
-        stackoverflow: string,
-      },
-      menu: Array<{label: string, path: string}>,
-      copyright: string
-    }
-  },
-  allMarkdownRemark: {
-    totalCount: number
-    edges: {
-      node: {
-        excerpt: string
-        fields: {
-          slug: string,
-          categorySlug: string
-        }
-        timeToRead: number
-        frontmatter: {
-          date: string
-          title: string,
-          category: string,
-          description: string
-        }
-      }
-    }[]
-  }
-}
+import { PageContext, PageQuery } from 'types'
 
 interface Props extends PageProps {
-  readonly data: PageQueryData
-  readonly pageContext: {
-    category?: string
-  }
+  readonly data: PageQuery
+  readonly pageContext: PageContext
 }
 
 const CategoryTemplate : React.FC<Props> = (props) => {
-  console.log(props);
     const { title } = props.data.site.siteMetadata
     const { category } = props.pageContext
 

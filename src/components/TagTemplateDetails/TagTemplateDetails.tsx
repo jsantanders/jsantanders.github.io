@@ -1,35 +1,9 @@
 import React from 'react'
+import { PageQuery } from 'types'
 import Post from '../Post'
 
-interface PageQueryData {
-  site: {
-    siteMetadata: {
-      title: string
-    }
-  }
-  allMarkdownRemark: {
-    totalCount: number
-    edges: {
-      node: {
-        excerpt: string
-        fields: {
-          slug: string,
-          categorySlug: string
-        }
-        timeToRead: number
-        frontmatter: {
-          date: string
-          title: string,
-          category: string,
-          description: string
-        }
-      }
-    }[]
-  }
-}
-
 interface Props {
-  readonly data: PageQueryData
+  readonly data: PageQuery
   readonly pageContext: {
     tag?: string
   }
@@ -40,7 +14,7 @@ const TagTemplateDetails : React.FC<Props> = (props) => {
     const tagTitle = props.pageContext.tag
     const posts = props.data.allMarkdownRemark.edges
     posts.forEach(post => {
-      items.push(<Post data={post} key={post.node.fields.slug} />)
+      items.push(<Post data={post.node} key={post.node.fields.slug} />)
     })
 
     return (

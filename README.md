@@ -30,32 +30,36 @@ This is a fork of
 ```
 └── src
     ├── assets
-    │   ├── fonts
-    │   │   └── fontello-771c82e0
-    │   │       ├── css
-    │   │       └── font
     │   └── scss
     │       ├── base
-    │       ├── mixins
-    │       └── pages
+    │       └─── mixins
     ├── components
-    │   ├── CategoryTemplateDetails
-    │   ├── Disqus
+    │   ├── Feed
+    │   ├── Icon
     │   ├── Layout
-    │   ├── Links
-    │   ├── Menu
-    │   ├── PageTemplateDetails
+    │   ├── Page
+    │   ├── Pagination
     │   ├── Post
-    │   ├── PostTemplateDetails
-    │   ├── ScrollButton
-    │   ├── Sidebar
-    │   ├── ThemeToggle
+    │   │   ├── Author
+    │   │   ├── Comments
+    │   │   ├── Content
+    │   │   ├── Meta
+    │   │   └── Tags
+    │   ├── Sidebar
+    │   │   ├── Author
+    │   │   ├── Contacts
+    │   │   ├── Copyright
+    │   │   ├── Menu
+    │   │   └── ThemeToggle
     │   └── Translations
     ├── layouts
+    ├── constants
+    ├── hooks
     ├── pages
-    │   ├── articles
+    │   ├── posts
     │   └── about
-    └── templates
+    ├── templates
+    └── utils
 ```
 
 ## Getting Started

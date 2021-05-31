@@ -7,7 +7,7 @@ module.exports = {
     `prettier/@typescript-eslint`,
     `plugin:prettier/recommended`,
   ],
-  plugins: [`@typescript-eslint`, `prettier`, `react`, `emotion`, `react-hooks`],
+  plugins: [`@typescript-eslint`, `prettier`, `react`, `emotion`, `react-hooks`,  'graphql'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -48,6 +48,11 @@ module.exports = {
         endOfLine: `auto`,
       },
     ],
+    'graphql/template-strings': ['error', {
+      env: 'relay',
+      tagName: 'graphql',
+      schemaJsonFilepath: path.resolve(__dirname, 'src/__generated__gatsby-introspection.json'),
+    }],
   },
   overrides: [
     // Override some TypeScript rules just for .js files

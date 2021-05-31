@@ -1,66 +1,47 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { graphql, PageProps } from 'gatsby'
-import Layout from '../components/Layout'
-import PostTemplateDetails from '../components/PostTemplateDetails'
-import { PageContext, PageQuery } from 'types'
+// @flow strict
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Post from '../components/Post';
+import { useSiteMetadata } from '../hooks';
 
-interface Props extends PageProps {
-  readonly data: PageQuery
-  readonly pageContext: PageContext
-}
+type Props = {
+  data: GatsbyTypes.PostBySlugQuery,
+  pageContext: GatsbyTypes.SitePageContext
+};
 
-const PostTemplate: React.FC<Props> = (props) => {
-  const { title, subtitle } = props.data.site.siteMetadata
-  const post = props.data.markdownRemark
-  const { title: postTitle, description: postDescription } = post.frontmatter
-  const description = postDescription !== null ? postDescription : subtitle
+const PostTemplate = ({ data, pageContext }: Props) => {
+  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata() || {};
+  const { frontmatter } = data.markdownRemark || {};
+  const { title: postTitle, description: postDescription = '' } = frontmatter || {};
+  const metaDescription = postDescription || siteSubtitle;
 
   return (
-    <Layout>
-      <div>
-        <Helmet>
-          <title>{`${postTitle} - ${title}`}</title>
-          <meta name="description" content={description} />
-        </Helmet>
-        <PostTemplateDetails {...props} />
-      </div>
+    <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription} >
+      <Post post={data.markdownRemark} pageContext={pageContext} />
     </Layout>
-  )
-}
+  );
+};
 
-export default PostTemplate
-
-export const pageQuery = graphql`
+export const query = graphql`
   query PostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        subtitle
-        copyright
-        author {
-          name
-          twitter
-        }
-        disqusShortname
-        url
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      timeToRead
       fields {
+        slug
         tagSlugs
         langKey
-        slug
       }
-      timeToRead
       frontmatter {
-        title
-        tags
         date
         description
+        tags
+        title
       }
     }
   }
-`
+`;
+
+export default PostTemplate;

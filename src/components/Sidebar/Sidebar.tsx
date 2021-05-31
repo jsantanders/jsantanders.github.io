@@ -1,70 +1,28 @@
-import React from 'react'
-import get from 'lodash/get'
-import { Link, PageProps } from 'gatsby'
-import Menu from '../Menu'
-import Links from '../Links'
-import profilePic from '../../pages/photo.jpg'
-import './style.scss'
-import { PageQuery } from 'types'
+import React from 'react';
+import Author from './Author';
+import Contacts from './Contacts';
+import Copyright from './Copyright';
+import Menu from './Menu';
+import styles from './Sidebar.module.scss';
+import { useSiteMetadata } from '../../hooks';
 
+type Props = {
+  isIndex?: boolean,
+};
 
-interface Props extends PageProps {
-  readonly data: PageQuery
-}
+const Sidebar = ({ isIndex }: Props) => {
+  const { author, copyright, menu } = useSiteMetadata();
 
-
-const Sidebar : React.FC<Props> = (props) => {
-    const { location } = props
-    const {
-      author,
-      subtitle,
-      copyright,
-      menu,
-    } = props.data.site.siteMetadata
-    const isHomePage = get(location, 'pathname', '/') === '/'
-
-    /* eslint-disable jsx-a11y/img-redundant-alt */
-    const authorBlock = (
-      <div>
-        <Link to="/">
-          <img
-            src={profilePic}
-            className="sidebar__author-photo"
-            width="75"
-            height="75"
-            alt={author.name}
-          />
-        </Link>
-        {isHomePage ? (
-          <h1 className="sidebar__author-title">
-            <Link className="sidebar__author-title-link" to="/">
-              {author.name}
-            </Link>
-          </h1>
-        ) : (
-          <h2 className="sidebar__author-title">
-            <Link className="sidebar__author-title-link" to="/">
-              {author.name}
-            </Link>
-          </h2>
-        )}
-        <p className="sidebar__author-subtitle">{subtitle}</p>
+  return (
+    <div className={styles['sidebar']}>
+      <div className={styles['sidebar__inner']}>
+        <Author author={author!} isIndex={isIndex} />
+        <Menu menu={menu as GatsbyTypes.SiteSiteMetadataMenu[]} />
+        <Contacts contacts={author?.contacts!} />
+        <Copyright copyright={copyright!} />
       </div>
-    )
-    /* eslint-enable jsx-a11y/img-redundant-alt */
+    </div>
+  );
+};
 
-    return (
-      <div className="sidebar">
-        <div className="sidebar__inner">
-          <div className="sidebar__author">{authorBlock}</div>
-          <div>
-            <Menu data={menu} />
-            <Links data={author} />
-            <p className="sidebar__copyright">{copyright}</p>
-          </div>
-        </div>
-      </div>
-    )
-}
-
-export default Sidebar
+export default Sidebar;

@@ -22,6 +22,3 @@ ratings:
     - "**.ts"
     - "**.tsx"
     - "**.scss"
-
-exclude_paths:
-- src/assets/fonts/**/*

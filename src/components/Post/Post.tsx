@@ -1,57 +1,75 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import moment from 'moment'
-import './style.scss'
-import { formatReadingTime } from '../../utils/helpers'
-import { Node } from 'types'
+import Author from './Author';
+import Comments from './Comments';
+import Content from './Content';
+import Meta from './Meta';
+import Tags from './Tags';
+import styles from './Post.module.scss';
+import { codeToLanguage, createLanguageLink, replaceAnchorLinksByLanguage } from '../../utils/i18n';
+import { useSiteMetadata } from '../../hooks';
 
-interface Props {
-  readonly data: Node
-}
+type Props = {
+  post: GatsbyTypes.PostBySlugQuery["markdownRemark"]
+  pageContext: GatsbyTypes.SitePageContext
+};
 
-const Post: React.FC<Props> = (props) => {
-  const {
-    title,
-    date,
-    category,
-    description,
-  } = props.data.frontmatter
-  const { timeToRead } = props.data
+const Post: React.FC<Props> = ({ post, pageContext }: Props) => {
+  let html = post?.html || "";
+  const tagSlugs = post?.fields?.tagSlugs;
+  const tags = post?.frontmatter?.tags;
+  const slug = post?.fields?.slug ?? "";
+  const title = post?.frontmatter?.title ?? "";
+  const date = post?.frontmatter?.date ?? "";
+  const lang = post?.fields?.langKey ?? "en";
+  const { author } = useSiteMetadata() || {};
+  const allArticleSlug = lang === "en" ? "/" : `/${lang}`
+  let {
+    translations,
+  } = pageContext;
 
-  let { slug, categorySlug } = props.data.fields
-  categorySlug = categorySlug === undefined ? "" : categorySlug;
+  // Replace original anchor links by lang when available in whitelist
+  // see utils/whitelist.js
+  html = replaceAnchorLinksByLanguage(html, lang);
+
+
+  let translationsList = translations?.slice() as string[];
+  translationsList.sort((a, b) => {
+    return codeToLanguage(a) < codeToLanguage(b) ? -1 : 1;
+  });
+
+  // TODO: this curried function is annoying
+  const languageLink = createLanguageLink(slug, lang);
+  const enSlug = languageLink('en');
+  const editUrl = `https://github.com/${author?.contacts?.github}/jsantanders.dev/edit/master/src/pages/posts/${enSlug.slice(
+    1,
+    enSlug.length - 1
+  )}/index${lang === 'en' ? '' : '.' + lang}.md`;
 
   return (
-    <div className="post">
-      <h2 className="post__title">
-        <Link className="post__title-link" to={slug}>
-          {title}
-        </Link>
-      </h2>
-      <div className="post__meta">
-        <time
-          className="post__meta-time"
-          dateTime={moment(date).format('MMMM D, YYYY')}
-        >
-          {moment(date).format('D MMMM YYYY')}
-        </time>
-        <span className="post__meta-divider" />
-        <span className="post__meta-time">
-          {`${formatReadingTime(timeToRead)}`}
-        </span>
-        <span className="post__meta-divider" />
-        <span className="post__meta-category" key={categorySlug}>
-          <Link to={categorySlug} className="post__meta-category-link">
-            {category}
-          </Link>
-        </span>
+    <div className={styles['post']}>
+      <Link className={styles['post__home-button']} to={allArticleSlug}>All Articles</Link>
+      <div className={styles['post__content']}>
+        <Content
+          body={html}
+          title={title}
+          editUrl={editUrl}
+          languageLink={languageLink}
+          translationsList={translationsList}
+          lang={lang} />
       </div>
-      <p className="post__description">{description}</p>
-      <Link className="post__readmore" to={slug}>
-        Read
-        </Link>
+
+      <div className={styles['post__footer']}>
+        <Meta date={date} />
+        {tags && tagSlugs && <Tags tags={tags as string[]} tagSlugs={tagSlugs as string[]} lang={lang} />}
+        <Author />
+      </div>
+
+      <div className={styles['post__comments']}>
+        <Comments postSlug={slug} postTitle={title} />
+      </div>
     </div>
-  )
+  );
 }
 
 export default Post

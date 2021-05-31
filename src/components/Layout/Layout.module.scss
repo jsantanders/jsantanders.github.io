@@ -1,0 +1,9 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.layout {
+  color: var(--typographic-base-font-color);
+  background: var(--bg);
+  transition: 'color 0.2s ease-out, background 0.2s ease-out';
+  lost-center: $layout-width;
+}

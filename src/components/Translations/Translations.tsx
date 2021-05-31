@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import { codeToLanguage } from '../../utils/i18n';
 
 const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",

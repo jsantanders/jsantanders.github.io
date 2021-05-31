@@ -1,72 +1,70 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { graphql, PageProps } from 'gatsby'
-import Layout from '../components/Layout'
-import Sidebar from '../components/Sidebar'
-import TagTemplateDetails from '../components/TagTemplateDetails'
-import { PageContext, PageQuery } from 'types'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Sidebar from '../components/Sidebar';
+import Feed from '../components/Feed';
+import Page from '../components/Page';
+import Pagination from '../components/Pagination';
+import { useSiteMetadata } from '../hooks';
 
-interface Props extends PageProps {
-  readonly data: PageQuery
-  readonly pageContext: PageContext
-}
+type Props = {
+  data: GatsbyTypes.TagPageQuery,
+  pageContext: GatsbyTypes.SitePageContext
+};
 
-const TagTemplate : React.FC<Props> = (props) => {
-    const { title } = props.data.site.siteMetadata
-    const { tag } = props.pageContext
+const TagTemplate = ({ data, pageContext }: Props) => {
+  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
 
-    return (
-      <Layout>
-        <div>
-          <Helmet title={`All Posts tagged as "${tag}" - ${title}`} />
-          <Sidebar {...props} />
-          <TagTemplateDetails {...props} />
-        </div>
-      </Layout>
-    )
-}
+  const {
+    tag,
+    currentPage,
+    prevPagePath,
+    nextPagePath,
+    hasPrevPage,
+    hasNextPage
+  } = pageContext;
 
-export default TagTemplate
+  const { allMarkdownRemark } = data;
+  const pageTitle = currentPage && currentPage > 0 ? `All Posts tagged as "${tag}" - Page ${currentPage} - ${siteTitle}` : `All Posts tagged as "${tag}" - ${siteTitle}`;
 
-export const pageQuery = graphql`
-  query TagPage($tag: String) {
+  return (
+    <Layout title={pageTitle} description={siteSubtitle}>
+      <Sidebar />
+      <Page title={tag}>
+        <Feed edges={allMarkdownRemark.edges} />
+        <Pagination
+          prevPagePath={prevPagePath}
+          nextPagePath={nextPagePath}
+          hasPrevPage={hasPrevPage}
+          hasNextPage={hasNextPage}
+        />
+      </Page>
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  query TagPage($tag: String, $postsLimit: Int!, $postsOffset: Int!,  $langKey: String!) {
     site {
       siteMetadata {
         title
         subtitle
-        copyright
-        menu {
-          label
-          path
-        }
-        author {
-          name
-          twitter
-          github
-          stackoverflow
-        }
       }
     }
     allMarkdownRemark(
-      limit: 1000
-      filter: {
-        frontmatter: {
-          tags: { in: [$tag] }
-          layout: { eq: "post" }
-          draft: { ne: true }
-        }
-        fields: { langKey: { eq: "en" } }
-      }
-      sort: { order: DESC, fields: [frontmatter___date] }
-    ) {
+        limit: $postsLimit,
+        skip: $postsOffset,
+        filter: { frontmatter: { tags: { in: [$tag] }, layout: { eq: "post" }, draft: { ne: true } }, fields: { langKey: { eq: $langKey } } },
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ){
       edges {
         node {
+          timeToRead
           fields {
             slug
             categorySlug
             langKey
           }
-          timeToRead
           frontmatter {
             title
             date
@@ -77,4 +75,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
+
+export default TagTemplate;

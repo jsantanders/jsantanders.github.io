@@ -1,54 +1,36 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { graphql, PageProps } from 'gatsby'
-import Layout from '../components/Layout'
-import PageTemplateDetails from '../components/PageTemplateDetails'
-import { PageQuery } from 'types'
+// @flow strict
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Sidebar from '../components/Sidebar';
+import Page from '../components/Page';
+import { useSiteMetadata } from '../hooks';
 
-interface Props extends PageProps {
-  readonly data: PageQuery
-}
+type Props = {
+    data: {
+        markdownRemark: GatsbyTypes.MarkdownRemark
+    }
+};
 
-const PageTemplate : React.FC<Props> = (props) => {
-    const { title, subtitle } = props.data.site.siteMetadata
-    const page = props.data.markdownRemark
-    const { title: pageTitle, description: pageDescription } = page.frontmatter
-    const description = pageDescription !== null ? pageDescription : subtitle
+const PageTemplate = ({ data }: Props) => {
+    const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+    const { html: pageBody } = data.markdownRemark;
+    const { frontmatter } = data.markdownRemark;
+    const { title: pageTitle, description: pageDescription = '' } = frontmatter || {};
+    const metaDescription = pageDescription || siteSubtitle;
 
     return (
-      <Layout>
-        <div>
-          <Helmet>
-            <title>{`${pageTitle} - ${title}`}</title>
-            <meta name="description" content={description} />
-          </Helmet>
-          <PageTemplateDetails {...props} />
-        </div>
-      </Layout>
-    )
-}
+        <Layout title={`${pageTitle} - ${siteTitle}`} description={metaDescription} >
+            <Sidebar />
+            <Page title={pageTitle}>
+                <div dangerouslySetInnerHTML={{ __html: pageBody ?? "" }} />
+            </Page>
+        </Layout>
+    );
+};
 
-export default PageTemplate
-
-export const pageQuery = graphql`
+export const query = graphql`
   query PageBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        subtitle
-        copyright
-        menu {
-          label
-          path
-        }
-        author {
-          name
-          twitter
-          github
-          stackoverflow
-        }
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
@@ -59,4 +41,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
+
+export default PageTemplate;

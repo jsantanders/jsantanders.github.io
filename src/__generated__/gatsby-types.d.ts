@@ -2103,8 +2103,6 @@ type Query_allDirectoryArgs = {
 type Query_siteArgs = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-  port: Maybe<IntQueryOperatorInput>;
-  host: Maybe<StringQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -2243,8 +2241,6 @@ type Query_allSitePluginArgs = {
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
-  readonly port: Maybe<Scalars['Int']>;
-  readonly host: Maybe<Scalars['String']>;
   readonly pathPrefix: Maybe<Scalars['String']>;
   readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly id: Scalars['ID'];
@@ -2461,8 +2457,6 @@ type SiteFieldsEnum =
   | 'siteMetadata.author.contacts.email'
   | 'siteMetadata.author.contacts.linkedin'
   | 'siteMetadata.author.contacts.gitlab'
-  | 'port'
-  | 'host'
   | 'pathPrefix'
   | 'polyfill'
   | 'id'
@@ -2555,8 +2549,6 @@ type SiteFieldsEnum =
 type SiteFilterInput = {
   readonly buildTime: Maybe<DateQueryOperatorInput>;
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-  readonly port: Maybe<IntQueryOperatorInput>;
-  readonly host: Maybe<StringQueryOperatorInput>;
   readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly polyfill: Maybe<BooleanQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
@@ -3603,6 +3595,52 @@ type WebPOptions = {
   readonly quality: Maybe<Scalars['Int']>;
 };
 
+type CategoriesListQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type CategoriesListQueryQuery = { readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+
+type TagsListQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type TagsListQueryQuery = { readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+
+type SiteMetaDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteMetaDataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+      Pick<SiteSiteMetadata, 'disqusShortname' | 'copyright' | 'url' | 'title' | 'subtitle'>
+      & { readonly author: Maybe<(
+        Pick<SiteSiteMetadataAuthor, 'name' | 'bio' | 'photo'>
+        & { readonly contacts: Maybe<Pick<SiteSiteMetadataAuthorContacts, 'linkedin' | 'github' | 'twitter'>> }
+      )>, readonly menu: Maybe<ReadonlyArray<Maybe<Pick<SiteSiteMetadataMenu, 'label' | 'path'>>>> }
+    )> }> };
+
+type IndexTemplateQueryVariables = Exact<{
+  postsLimit: Scalars['Int'];
+  postsOffset: Scalars['Int'];
+  langKey: Scalars['String'];
+}>;
+
+
+type IndexTemplateQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MarkdownRemark, 'timeToRead'>
+        & { readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug' | 'categorySlug' | 'langKey'>>, readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'category' | 'description'>> }
+      ) }> } };
+
+type CategoryPageQueryVariables = Exact<{
+  category: Maybe<Scalars['String']>;
+  postsLimit: Scalars['Int'];
+  postsOffset: Scalars['Int'];
+  langKey: Scalars['String'];
+}>;
+
+
+type CategoryPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MarkdownRemark, 'timeToRead'>
+        & { readonly fields: Maybe<Pick<MarkdownRemarkFields, 'categorySlug' | 'slug' | 'langKey'>>, readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'category' | 'title'>> }
+      ) }> } };
+
 type PageBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
@@ -3635,57 +3673,6 @@ type TagPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<S
         Pick<MarkdownRemark, 'timeToRead'>
         & { readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug' | 'categorySlug' | 'langKey'>>, readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'category' | 'description'>> }
       ) }> } };
-
-type CategoryPageQueryVariables = Exact<{
-  category: Maybe<Scalars['String']>;
-  postsLimit: Scalars['Int'];
-  postsOffset: Scalars['Int'];
-  langKey: Scalars['String'];
-}>;
-
-
-type CategoryPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MarkdownRemark, 'timeToRead'>
-        & { readonly fields: Maybe<Pick<MarkdownRemarkFields, 'categorySlug' | 'slug' | 'langKey'>>, readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'category' | 'title'>> }
-      ) }> } };
-
-type IndexTemplateQueryVariables = Exact<{
-  postsLimit: Scalars['Int'];
-  postsOffset: Scalars['Int'];
-  langKey: Scalars['String'];
-}>;
-
-
-type IndexTemplateQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MarkdownRemark, 'timeToRead'>
-        & { readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug' | 'categorySlug' | 'langKey'>>, readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'category' | 'description'>> }
-      ) }> } };
-
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
-type CategoriesListQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type CategoriesListQueryQuery = { readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
-
-type SiteMetaDataQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteMetaDataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'disqusShortname' | 'copyright' | 'url' | 'title' | 'subtitle'>
-      & { readonly author: Maybe<(
-        Pick<SiteSiteMetadataAuthor, 'name' | 'bio' | 'photo'>
-        & { readonly contacts: Maybe<Pick<SiteSiteMetadataAuthorContacts, 'linkedin' | 'github' | 'twitter'>> }
-      )>, readonly menu: Maybe<ReadonlyArray<Maybe<Pick<SiteSiteMetadataMenu, 'label' | 'path'>>>> }
-    )> }> };
-
-type TagsListQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type TagsListQueryQuery = { readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
